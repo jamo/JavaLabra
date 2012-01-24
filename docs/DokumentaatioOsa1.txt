@@ -1,0 +1,15 @@
+Aihe : toistonharjoittelua / kysely sovellus
+
+
+Toteutetaan sovellus, joka lukee sanoja tiedostosta ja kyselee niitä käyttäjältä. Sovellus tietää, mitkä sanat käyttäjä on osannut, ja missä on tapahtunut virheitä. 
+Järjestelmä tukee vain sanaparien kyselyä, eli kahta samaa merkitystä ei sanalle hyväksytä.
+
+Sovelluksessa on vielä seuraava toiminnallisuus
+
+- lue sanat tiedososta omaan rakenteeseen.
+- kysy seuaava sana
+- kysy edelinen sana
+  - jos kahdessa edellisessä mennään listan loppuun tai alkuun siirrytään listan toiseen päähän, eli listaa voidaan kysellä luputtomasti.
+
+- TODO kysy painottaen niitä sanoja, joita käyttäjä ei vielä osaa.
+
