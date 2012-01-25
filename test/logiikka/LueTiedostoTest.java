@@ -42,7 +42,6 @@ public class LueTiedostoTest {
     public void testLueTiedostoMock2() {
        
         io.setSysIn("src/SanaLista.txt\n");
-//        Apuluokka luokka = new Apuluokka("ei-ole-olemassa-trololo\n/fs-0/a/jarmoiso/JavaLabra/src/SanaLista.txt\n");
         System.out.println("LueTiedosto");
         logiikka.LueTiedosto l = new logiikka.LueTiedosto();
         Scanner lukija = l.lueTiedosto();
@@ -53,19 +52,4 @@ public class LueTiedostoTest {
         assertTrue(tmp +"Kun tiedostoa ei löydy, annetaan virheilmoitus",tmp.trim().isEmpty());
     }
 
-    /**
-     * Test of sulje method, of class LueTiedosto.
-     */
-//    @Test
-//    public void testSulje() {
-//        Apuluokka luokka = new Apuluokka("/fs-0/a/jarmoiso/JavaLabra/src/SanaLista.txt\n");
-//        System.out.println("sulje");
-//        Scanner lukija = null;
-//        LueTiedosto instance = new LueTiedosto();
-//        boolean expResult = false;
-//        boolean result = instance.sulje(lukija);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
 }

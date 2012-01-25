@@ -124,11 +124,9 @@ public class KysSana implements Comparable<KysSana> {
         double v = this.getVaarin();
         double o = this.getOikein();
 //        double ka = 
-        double pa = 5 * v + o;
+        double painoArv = 5 * v + o;
 //                (10*v+1*o)*Math.log((o+v)/o);
-
-        return pa;
-
+        return painoArv;
     }
 //            = new HashMap<String, Integer>();
 
@@ -141,8 +139,8 @@ public class KysSana implements Comparable<KysSana> {
  *
      */
     @Override
-    public int compareTo(KysSana o) {
-        return (int) (this.painoArvo() - o.painoArvo());
+    public int compareTo(KysSana verrattavaComp) {
+        return (int) (this.painoArvo() - verrattavaComp.painoArvo());
 
 
 //        throw new UnsupportedOperationException("Not supported yet.");

@@ -1,4 +1,5 @@
-/*
+/**
+ * Tällä luokalla ja metodilla ei ole lainkaan käyttöä.
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -13,7 +14,8 @@ import java.util.Scanner;
  */
 public class SanatKomentorivilta {
     
-    /*
+    /**
+     * Tällä luokalla + metodilla ei ole tällä hetkellä lainkaan käyttöä!
      * Luetaan komentoriviltä sanapari
      * @RETURN arraylist jossa sanaparit KysSana olioina
      */
