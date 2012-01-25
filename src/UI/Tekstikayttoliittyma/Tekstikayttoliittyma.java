@@ -22,7 +22,7 @@ public class Tekstikayttoliittyma {
     public Tekstikayttoliittyma() {
 //        h = new HashMap<a.get()
         LueTiedosto l = new LueTiedosto();
-        Scanner tiedLukija = l.LueTiedosto();
+        Scanner tiedLukija = l.lueTiedosto();
         SanatTaulukkoon st = new SanatTaulukkoon();
         a = st.lueSanat(tiedLukija);
         jarstettyV = a;
