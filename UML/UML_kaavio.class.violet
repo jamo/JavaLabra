@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_26" class="java.beans.XMLDecoder"> 
+ <object class="com.horstmann.violet.ClassDiagramGraph"> 
+  <void method="addNode"> 
+   <object class="com.horstmann.violet.ClassNode"> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>KysSana(String eka, String toka)
+setEka(String sana)
+setToka(String sana)
+getEka() 
+getToka()
+getOikein() 
+getVaarin()
+meniOikein() 
+meniVaarin() 
+toString() 
+painoArvo()
+compareTo(KysSana verrattavaComp) </string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>KysSana</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>1068.0</double> 
+     <double>137.0</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object class="com.horstmann.violet.ClassNode"> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>kysyString(String viesti)
+kysyInt(String viesti)</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>Lukija</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>579.0</double> 
+     <double>211.0</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object class="com.horstmann.violet.ClassNode"> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>Tekstikayttoliittyma() 
+komentotulkki() 
+kysy(int kohta, boolean kysySuunta ,int siirSuunta)
+ siirryEteenpain(int kohtaNyt)
+siirryTaaksipain(int kohta)
+mahtuukoEteenpain(int kohta)
+mahtuukoTaaksepain(int kohta)</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>Tekstikayttoliittyma</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>685.0</double> 
+     <double>438.0</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object class="com.horstmann.violet.ClassNode"/> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>320.0</double> 
+     <double>362.0</double> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+</java> 
