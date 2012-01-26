@@ -12,6 +12,7 @@ public class Main {
 
 //        System.out.println(a);
 //        komentotulkki();
+//        komentotulkki();
        
         //   src/SanaLista.txt
     }
