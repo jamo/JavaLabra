@@ -1,6 +1,4 @@
 
-import UI.Tekstikayttoliittyma.Tekstikayttoliittyma;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -8,8 +6,7 @@ public class Main {
 //        System.out.println("Luetaan tiedosto: ");
 //        lukija = l.lueTiedosto();
 //        SanatTaulukkoon st = new SanatTaulukkoon();
-        Tekstikayttoliittyma teksti = new Tekstikayttoliittyma();
-
+        UI.Tekstikayttoliittyma.Tekstikayttoliittyma t = new UI.Tekstikayttoliittyma.Tekstikayttoliittyma();
 //        System.out.println(a);
 //        komentotulkki();
 //        komentotulkki();

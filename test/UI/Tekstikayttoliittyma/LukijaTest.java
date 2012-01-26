@@ -2,6 +2,7 @@ package UI.Tekstikayttoliittyma;
 
 import fi.helsinki.cs.tmc.edutestutils.MockStdio;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 import org.junit.Rule;
 import org.junit.Test;
 
