@@ -18,7 +18,8 @@ public class Tekstikayttoliittyma {
     /**
      * toteuttaa perus logiikan, joka vaaditaan tekstipohjaisen käyttöliittymän
      * alustamiseen. Lopuksi avaa komentotulkin.
-     **/
+     *
+     */
     public Tekstikayttoliittyma() {
 //        h = new HashMap<a.get()
         LueTiedosto l = new LueTiedosto();
@@ -31,9 +32,10 @@ public class Tekstikayttoliittyma {
     }
 
     /**
+     * Komentotulkki perus käytöliittymä,
      *
-     * komentotulkki jotain
-     **/
+     *
+     */
     private void komentotulkki() {
 
         int kohta = 0;
@@ -48,10 +50,10 @@ public class Tekstikayttoliittyma {
             } else if (komento.equals("seuraava") || komento.equals("next") || komento.equals("n")) {
                 //suoritetaan komento
 //                kysySeuraava(kohta);
-                kohta = kysy(kohta,true, 1);
+                kohta = kysy(kohta, true, 1);
             } else if (komento.equals("edellinen") || komento.equals("previous") || komento.equals("p")) {
                 //suoritetaan komento
-                kohta = kysy(kohta,true, -1);
+                kohta = kysy(kohta, true, -1);
             } else if (komento.equals("random") || komento.equals("r")) {
                 //suoritetaan komento
                 random();
@@ -64,22 +66,18 @@ public class Tekstikayttoliittyma {
 
     /**
      * jos suunta on true on suunta sana -> vastine. Jos false, niin on suunta
-     * Vastine -> sana
-     * 1 == eteenpäin -1 == taaksepäin ja 0 == pysy paikallaan
-     **/
-    private int kysy(int kohta, boolean kysySuunta ,int siirSuunta) {
+     * Vastine -> sana 1 == eteenpäin -1 == taaksepäin ja 0 == pysy paikallaan
+     *
+     */
+    private int kysy(int kohta, boolean kysySuunta, int siirSuunta) {
         String vastaus;
 
 
         if (siirSuunta == 1) {
             kohta = siirryEteenpain(kohta);
-        }
-
-        if (siirSuunta == -1) {
+        } else if (siirSuunta == -1) {
             kohta = siirryEteenpain(kohta);
         }
-
-
         if (kysySuunta) {
             vastaus = lukijaOlio.kysyString("Anna sanan: " + a.get(kohta).getEka() + " vastine");
             if (vastaus.equals(a.get(kohta).getToka())) {
@@ -106,7 +104,8 @@ public class Tekstikayttoliittyma {
 
     /**
      * Eteenpäin siirryttäessä huolehtii siitä, ettei ylitetä taulukon rajoja.
-     **/
+     *
+     */
     private int siirryEteenpain(int kohtaNyt) {
         if (kohtaNyt >= a.size() - 1) {
             return 0;
@@ -117,7 +116,8 @@ public class Tekstikayttoliittyma {
 
     /**
      * Taakseppäin siirryttäessä huolehtii siitä, ettei ylitetä taulukon rajoja.
-     **/
+     *
+     */
     private int siirryTaaksipain(int kohta) {
         if (kohta <= 0) {
             return a.size() - 1;
@@ -128,7 +128,8 @@ public class Tekstikayttoliittyma {
 
     /**
      * Kertoo, mahtuuko eteenpäin siirtymään
-     **/
+     *
+     */
     private boolean mahtuukoEteenpain(int kohta) {
         if (kohta + 1 < a.size()) {
             return true;
@@ -139,7 +140,8 @@ public class Tekstikayttoliittyma {
 
     /**
      * Kertoo, mahtuuko taakseppäin siirtymään
-     **/
+     *
+     */
     private boolean mahtuukoTaaksepain(int kohta) {
         if (kohta - 1 >= 0) {
             return true;
@@ -151,7 +153,8 @@ public class Tekstikayttoliittyma {
     /**
      * arpoo satunnaisen kohdan ja kutsuu kysy metodia, ja palauttaa metodin
      * paluuarvon. Tämä kutsuu methodia siirtymään eteenpäin.
-     **/
+     *
+     */
     private int kysyRandomVastineeseen() {
         Random r = new Random();
         return kysy(r.nextInt(a.size()), true, 0);
@@ -160,7 +163,8 @@ public class Tekstikayttoliittyma {
     /**
      * arpoo satunnaisen kohdan ja kutsuu kysy metodia, ja palauttaa metodin
      * paluuarvon. Tämä kutsu metodia siirtymään taakseppäin
-     **/
+     *
+     */
     private int kysyRandomKohteeseen() {
         Random r = new Random();
         return kysy(r.nextInt(a.size()), false, 0);
@@ -168,9 +172,10 @@ public class Tekstikayttoliittyma {
 
     /**
      * Kun halutaan random, tulee suunta valita - tämä hoitaa sen.
-     * 
-     * @return palauttaa int arvon joka on kyseinen kohta. 
-     **/
+     *
+     * @return palauttaa int arvon joka on kyseinen kohta.
+     *
+     */
     private int random() {
         int suunta = lukijaOlio.kysyInt("Valitse suunta: \n1: sana -> vastine\n2:vastine -> sana");
         if (suunta == 2) {
@@ -182,42 +187,46 @@ public class Tekstikayttoliittyma {
 
     /**
      * Not yet included
-     * @return 
-     **/
+     *
+     * @return
+     *
+     */
     private int logiikka() {
 
 
         return -1;
     }
- /**
-  * 
-  * @return 
-  **/
-    private  int virheitaEniten() {
+
+    /**
+     *
+     * @return
+     *
+     */
+    private int virheitaEniten() {
         Collections.sort(jarstettyV);
         Random r = new Random();
         return kysy(r.nextInt(jarstettyV.size()), true, 0);
-        
-        
+
+
 //        return 0;
     }
-    
+
     /**
-     * 
-     * @return 
-     **/
-    private int alunPainotus(){
+     *
+     * @return
+     *
+     */
+    private int alunPainotus() {
         Random r = new Random();
         int koko = a.size();
-        double randomi = r.nextDouble()*koko+1;
-        if (randomi > koko /2){
+        double randomi = r.nextDouble() * koko + 1;
+        if (randomi > koko / 2) {
             //otetaan loppu listasta
-        } else{
+        } else {
             //otetaan alku listasta, tänne siis haluttiin
         }
-        
-        
+
+
         return 0;
     }
-    
 }

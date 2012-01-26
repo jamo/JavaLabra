@@ -1,6 +1,5 @@
 package logiikka;
 
-
 public class KysSana implements Comparable<KysSana> {
 
     private String eka, toka;
@@ -10,8 +9,8 @@ public class KysSana implements Comparable<KysSana> {
      * Konstruktori, jolla parametrina sanapari. Tämä asettaa ne luokan private
      * muuttujiin.
      *
-     * @param eka
-     * @param toka
+     * @param eka  itse sana
+     * @param toka sanan vastine
      */
     public KysSana(String eka, String toka) {
         this.eka = eka;
@@ -26,11 +25,11 @@ public class KysSana implements Comparable<KysSana> {
 
     /**
      *
-     * Asettaa sanan. Palauttaa true, jos onnistuu (ei nyt osaa palauttaa
-     * false.)
+     * Asettaa sanan. Palauttaa true, jos onnistuu.
      *
-     * @param sana
-     * @return
+     * @param sana asetettava sana, mene private muuttujaan eka
+     *
+     * @return palauttaa true merkiksi onnistumisesta
      */
     public boolean setEka(String sana) {
         eka = sana;
@@ -41,8 +40,9 @@ public class KysSana implements Comparable<KysSana> {
      * Asettaa sanan vastineen. Palauttaa true, jos onnistuu (ei nyt osaa
      * palauttaa false.)
      *
-     * @param sana
-     * @return
+     * @param sana asetettava sana, menee sanan vastineeksi
+     *
+     * @return palauttaa true merkiksi onnistumisesta
      */
     public boolean setToka(String sana) {
         toka = sana;
@@ -50,9 +50,9 @@ public class KysSana implements Comparable<KysSana> {
     }
 
     /**
-     * Palauttaa sanan arvon
+     * Palauttaa itse sanan arvon
      *
-     * @return
+     * @return palauttaa sanan String merkkijonona
      */
     public String getEka() {
         return eka;
@@ -61,7 +61,7 @@ public class KysSana implements Comparable<KysSana> {
     /**
      * Palauttaa sanan Vastineen arvon
      *
-     * @return
+     * @return sanan vastineen String merkkijonona
      */
     public String getToka() {
         return toka;
@@ -70,7 +70,7 @@ public class KysSana implements Comparable<KysSana> {
     /**
      * Palauttaa oikeinmenneiden käännösten lukumäärän
      *
-     * @return
+     * @return Palauttaa oikein menneiden kääeenösten arvon
      */
     public int getOikein() {
         return oikein;
@@ -79,17 +79,17 @@ public class KysSana implements Comparable<KysSana> {
     /**
      * Palauttaa väärinmenneiden käännösten lukumäärän
      *
-     * @return
+     * @return palauttaa väärin menneiden käännösten arvon
      */
     public int getVaarin() {
         return vaarin;
     }
 
-   
-     /**
-      * Kasvattaa oikeinmenneden määrää yhdellä ja palauttaa onnistuessaan true
-      * @return 
-      */
+    /**
+     * Kasvattaa oikeinmenneden määrää yhdellä ja palauttaa onnistuessaan true
+     *
+     * @return palauttaa true merkiksi onnistumisesta
+     */
     public boolean meniOikein() {
         oikein++;
         return true;
@@ -97,8 +97,8 @@ public class KysSana implements Comparable<KysSana> {
 
     /**
      * Kasvattaa väärinmenneden määrää yhdellä ja palauttaa onnistuessaan true
-     * 
-     * @return 
+     *
+     * @return palauttaa true merkiksi onnistumisesta
      */
     public boolean meniVaarin() {
         vaarin++;
@@ -108,7 +108,7 @@ public class KysSana implements Comparable<KysSana> {
     /**
      * Palauttaa formatoidun toString tekstin.
      *
-     * @return 
+     * @return toString merkkijonoesityksen.
      */
     @Override
     public String toString() {
@@ -116,8 +116,9 @@ public class KysSana implements Comparable<KysSana> {
     }
 
     /**
+     * KysSana olioiden vertaulun vuoksi on laskettava sanalla painoarvo, joka
      *
-     * @return 
+     * @return palauttaa lasketun painoarvon jokaiselle sanalle.
      *
      */
     private double painoArvo() {
@@ -131,12 +132,12 @@ public class KysSana implements Comparable<KysSana> {
 //            = new HashMap<String, Integer>();
 
     /**
+     * compareTo KysSana olioiden vertailun vuoksi
      *
+     * @param verrattavaComp verrattava ilmentymä
      *
-     *
-     * @param o
-     * @return 
- *
+     * @return palauttaa arvon , >0 jos this omaa suuremman painooarvon, 0 jos
+     *         sama ja <0 jos this omaa pienemmän painoarvon
      */
     @Override
     public int compareTo(KysSana verrattavaComp) {
