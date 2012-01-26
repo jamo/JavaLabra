@@ -5,8 +5,9 @@
 package logiikka;
 
 import fi.helsinki.cs.tmc.edutestutils.MockStdio;
-import org.junit.*;
 import static org.junit.Assert.*;
+import org.junit.Rule;
+import org.junit.Test;
 
 /**
  *
@@ -43,6 +44,7 @@ public class KysSanaTest {
         assertEquals("Sanan kysyminen ei onnistu", "eka", k.getEka());
     }
 
+    
     /**
      * Test of getToka method, of class KysSana.
      */
@@ -120,5 +122,12 @@ public class KysSanaTest {
          k2.meniVaarin();
 //        String oletus = "\nSana: " + k.getEka() + " || Vastine: " + k.getToka();
         assertTrue("PainoArvon lakskutapa muuttunut? (ei haitanne) tarkista metodi",  0<k.compareTo(k2));
+    }
+    
+    @Test
+    public void molemmatKonstruktoritToimivat() {
+        logiikka.KysSana k = new logiikka.KysSana("eka", "toka");
+        assertEquals("Sanan kysyminen ei onnistu", "eka", k.getEka());
+        assertEquals("Sanan kysyminen ei onnistu", "toka", k.getToka());
     }
 }

@@ -121,7 +121,7 @@ public class KysSana implements Comparable<KysSana> {
      * @return palauttaa lasketun painoarvon jokaiselle sanalle.
      *
      */
-    private double painoArvo() {
+    public double painoArvo() {
         double v = this.getVaarin();
         double o = this.getOikein();
 //        double ka = 

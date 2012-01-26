@@ -57,7 +57,8 @@ public class Tekstikayttoliittyma {
             } else if (komento.equals("random") || komento.equals("r")) {
                 //suoritetaan komento
                 random();
-            } else if (komento.equals("logiikka")) {
+            } else if (komento.equals("logiikka") || komento.equals("l")) {
+                random();
             } else {
                 System.out.println("Komentoa ei tunnistettu!");
             }
@@ -192,9 +193,16 @@ public class Tekstikayttoliittyma {
      *
      */
     private int logiikka() {
+        virheitaEniten(); //sorttaa jarjestettyV taulukon, jotta sitä voidaan kysellä.
+        String suunta = lukijaOlio.kysyString("Anna suunta: \n1 = sana => vastine\n2 vastine => sana");
+        if (suunta.equals("2")) {
+            return alunPainotus(false);
+        } else {
+            return alunPainotus(true);
+        }
 
 
-        return -1;
+//        return -1;
     }
 
     /**
@@ -202,31 +210,44 @@ public class Tekstikayttoliittyma {
      * @return
      *
      */
-    private int virheitaEniten() {
+    private void virheitaEniten() {
         Collections.sort(jarstettyV);
-        Random r = new Random();
-        return kysy(r.nextInt(jarstettyV.size()), true, 0);
 
 
 //        return 0;
     }
 
     /**
+     * Jos suunta == true, silloin kyselään sana => vastine
+     * Jos suunta == flase, silloin kysellaan vastine => sana
      *
      * @return
      *
      */
-    private int alunPainotus() {
+    private int alunPainotus(boolean suunta) {
         Random r = new Random();
+        double rajaRadom = Math.random();
         int koko = a.size();
+        int raja = 0;
         double randomi = r.nextDouble() * koko + 1;
-        if (randomi > koko / 2) {
-            //otetaan loppu listasta
+        for (int i = 0; i < jarstettyV.size(); i++) {
+            if (jarstettyV.get(i).painoArvo() < 0) {
+                raja = i;
+                i = jarstettyV.size();
+
+            }
+        }
+        if (rajaRadom <= (double) 2 / 3) {
+            r.nextInt(raja);
+            return kysy(r.nextInt(raja + 1), suunta, 1);
+            //eli nyt tänne kyselemään väärin menneitä;
         } else {
-            //otetaan alku listasta, tänne siis haluttiin
+            return kysy(r.nextInt(jarstettyV.size()), suunta, 1);
+            //eli tänne kyselemään oikeinmenneitä
+
         }
 
 
-        return 0;
+//        return 0;
     }
 }

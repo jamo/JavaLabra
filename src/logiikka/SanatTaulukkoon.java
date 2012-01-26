@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class SanatTaulukkoon {
 
-    public ArrayList<KysSana> lista;
+    private ArrayList<KysSana> lista;
 
     /*
      * Lukee sanat ArrayList<kysSana> talukkoon ja palauttaa taulukon.
