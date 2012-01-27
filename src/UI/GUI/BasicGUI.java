@@ -15,7 +15,8 @@ import logiikka.SanatTaulukkoon;
  * @author jarmo
  */
 public class BasicGUI extends javax.swing.JFrame {
-
+//    public KyselyLogiikka k = new KyselyLogiikka();
+    private String kysyttavaSana = "oletus sana";
 //    // Variables declaration - do not modify
 //    private javax.swing.JButton KysEdellinen;
 //    private javax.swing.JButton KysSeuraava;
@@ -171,8 +172,8 @@ public class BasicGUI extends javax.swing.JFrame {
 
     private void KysSeuraavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KysSeuraavaActionPerformed
         //Eli tähän se, mitä seuraavan sanan kysymiseen vaaditaan
-        String sana = "default";
-        Kysymys.setText("Anna sanan: "+ sana + " vastine:");
+//       kysyttavaSana
+//        Kysymys.setText("Anna sanan: "+ sana + " vastine:");
         
         
         

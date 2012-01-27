@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package UI;
 
 import UI.Tekstikayttoliittyma.Lukija;
@@ -18,7 +14,8 @@ import logiikka.SanatTaulukkoon;
  * @author jarmo
  */
 public class KyselyLogiikka {
-
+    private UserActionsInterface ui;
+    public String kysyttySana, kysytynSananVastine;
     private ArrayList<KysSana> a;
     private ArrayList<KysSana> jarstettyV;
     private Lukija lukijaOlio = new Lukija();
@@ -30,8 +27,10 @@ public class KyselyLogiikka {
      * toteuttaa perus logiikan, joka vaaditaan tekstipohjaisen käyttöliittymän
      * alustamiseen. Lopuksi avaa komentotulkin.
      *
+     * @param uui Interface, jolla viestit välittää.
      */
-    public KyselyLogiikka() {
+    public KyselyLogiikka(UserActionsInterface uui) {
+        this.ui = uui;
         LueTiedosto l = new LueTiedosto();
         Scanner tiedLukija = l.lueTiedosto();
         SanatTaulukkoon st = new SanatTaulukkoon();
@@ -143,6 +142,59 @@ public class KyselyLogiikka {
         return kohta;
     }
 
+    /**
+     * asetetaan kysyttävä sana, ja kysytty sana haluttuihin muuttujiin, ja
+     *
+     * @param kysySuunta jos true, niin sana -> vastine, jos false vastine ->
+     * sana
+     * @param siirSuunta jos 1, kysytään seuraavasana.jos -1, niin silloin
+     * kysytään kohdassaoleva sana
+     *
+     * @return
+     */
+    public int asetaKysymys(boolean kysySuunta, int siirSuunta) {
+        String vastaus;
+
+        if (siirSuunta == 1) {
+            kohta = siirryEteenpain(kohta);
+        } else if (siirSuunta == -1) {
+            kohta = siirryEteenpain(kohta);
+        }
+        //aloitetaan kysyminen
+        if (kysySuunta) {
+            kysyttySana = a.get(kohta).getEka();
+            kysytynSananVastine = a.get(kohta).getToka();
+        } else {
+            kysyttySana = a.get(kohta).getToka();
+            kysytynSananVastine = a.get(kohta).getEka();
+        }
+        return kohta;
+//        return 0;
+    }
+
+    public String tarkistaVastaus(String vastaus) {
+        if (vastaus.equals(kysytynSananVastine)) {
+            a.get(kohta).meniOikein();
+            this.ilmoitaOnnistumisesta();
+        } else {
+            a.get(kohta).meniVaarin();
+            this.ilmoitaVaainmenosta();
+        }
+        if (kysSuunta) {
+        }
+
+        return null;
+    }
+
+    public void ilmoitaOnnistumisesta(){
+        
+        
+    }
+     public void ilmoitaVaainmenosta(){
+        
+        
+    }
+    
     /**
      * Eteenpäin siirryttäessä huolehtii siitä, ettei ylitetä taulukon rajoja.
      *
@@ -271,7 +323,6 @@ public class KyselyLogiikka {
             if (jarstettyV.get(i).painoArvo() < 0) {
                 raja = i;
                 i = jarstettyV.size();
-
             }
         }
         if (rajaRadom <= (double) 2 / 3) {
