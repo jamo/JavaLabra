@@ -135,9 +135,9 @@ public class BasicGUI extends javax.swing.JFrame {
                         .addGap(43, 43, 43))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Onnistuneet, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Vaarin))
-                        .addGap(18, 18, 18)
+                            .addComponent(Vaarin)
+                            .addComponent(Onnistuneet, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Yhteensa)
                         .addContainerGap())))
         );
