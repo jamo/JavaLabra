@@ -15,11 +15,10 @@ import logiikka.SanatTaulukkoon;
  */
 public class KyselyLogiikka {
 
-    private UserActionsInterface ui;
     private String kysyttySana, kysytynSananVastine;
     private ArrayList<KysSana> a;
     private ArrayList<KysSana> jarstettyV;
-    private Lukija lukijaOlio = new Lukija();
+//    private Lukija lukijaOlio = new Lukija();
     private int kohta = 0, siirSuunta = 1;
     private boolean kysSuunta = true;
     private int oikein = 0, vaarin = 0;
@@ -40,7 +39,7 @@ public class KyselyLogiikka {
         jarstettyV = a;
         System.out.println(jarstettyV);
         System.out.println(a);
-        kohta=a.size();
+        kohta = a.size();
 //        Lukija lukija = new Lukija();
 //        komentotulkki(lukija);
     }
@@ -57,49 +56,6 @@ public class KyselyLogiikka {
         this.siirSuunta = suunta;
     }
 
-    /**
-     * Komentotulkki perus käytöliittymä,
-     *
-     *
-     */
-//    private void komentotulkki(UI.UserActionsInterface ui) {
-//
-//        int kohta = 0;
-//
-//        while (true) {
-//            String komento = ui.kysyString("Anna komento: komentoja ovat (q)lopeta,  (n)seuraava, (p)edellinen (r)random");
-////             = ui.kysyString();
-//
-//            if (komento.equals("lopeta") || komento.equals("quit") || komento.equals("q")) {
-//                //lopetetaan
-//                break;
-//            } else if (komento.equals("seuraava") || komento.equals("next") || komento.equals("n")) {
-//                //suoritetaan komento
-////                kysySeuraava(kohta);
-//                kohta = kysy(kohta, true, 1, ui);
-//            } else if (komento.equals("edellinen") || komento.equals("previous") || komento.equals("p")) {
-//                //suoritetaan komento
-//                kohta = kysy(kohta, true, -1, ui);
-//            } else if (komento.equals("random") || komento.equals("r")) {
-//                //suoritetaan komento
-//                random(ui);
-//            } else if (komento.equals("logiikka") || komento.equals("l")) {
-//                random(ui);
-//                TÄSSÄ PITÄISI KUTSUA LOGIIKKAA!!!
-//            } else {
-//                System.out.println("Komentoa ei tunnistettu!");
-//            }
-//        }
-//    }
-//    public void kysySeuraa(){
-//        kysy(kohta, kysSuunta, siirSuunta, null );
-//    }
-//     public void kysyEdell(){
-//        kysy(kohta, kysSuunta, siirSuunta, null );
-//    }
-//    public void kysySana() {
-//        this.kohta = kysy(kohta, kysSuunta, siirSuunta);
-//    }
     public String getKysyttavaSana() {
         if (kysSuunta) {
             return a.get(kohta).getEka();
@@ -109,26 +65,13 @@ public class KyselyLogiikka {
     }
 
 //   
+    
     /**
-     * asetetaan kysyttävä sana, ja kysytty sana haluttuihin muuttujiin, ja
-     *
-     * @param ar
-     * param
-     *                                                                                                                       *                                                                                                                            kysySuunta jos
-     *                                                                                                                            true,
-     *                                                                                                                            niin
-     *                                                                                                                            sana
-     *                                                                                                                            ->
-     *                                                                                                                            vastine,
-     *                                                                                                                            jos
-     *                                                                                                                            false
-     *                                                                                                                            vastine
-     *                                                                                                                            ->
-     * sana
-     * @param siirSuunta jos 1, kysytään seuraavasana.jos -1, niin silloin
-     * kysytään kohdassaoleva sana
-     *
-     * @return
+     * Asetetaan kysyttävä sana ja sille vastine sanan oikeellisuuden tarkastamista varten.
+     * @param ar arraylist, josta sana haetaan, sanojen järjestyksen vuoksi.
+     * @param kysySuunta jos true, nii sana -> vastine, muutoin vastine -> sana
+     * @param siirSuunta jos 1 kysytään seuraava, jos -1  kysytään edellinen, jos muu, kysytään kohdassa oleva sana.
+     * @return palautetaan kysytty sana
      */
     public String asetaKysymys(ArrayList<KysSana> ar, boolean kysySuunta, int siirSuunta) {
 
@@ -147,8 +90,6 @@ public class KyselyLogiikka {
             kysytynSananVastine = ar.get(kohta).getEka();
             return kysytynSananVastine;
         }
-//        return kohta;
-//        return 0;
     }
 
     public boolean tarkistaVastaus(String vastaus) {

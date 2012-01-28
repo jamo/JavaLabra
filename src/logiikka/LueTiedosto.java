@@ -41,7 +41,6 @@ public class LueTiedosto {
 
     public Scanner lueTied() {
         Scanner l = new Scanner(System.in);
-        System.out.print("Anna tiedoston sijainti: ");
         while (true) {
             try {
                 System.out.print("Anna tiedoston sijainti: ");

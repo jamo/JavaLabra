@@ -1,9 +1,9 @@
 package UI.Tekstikayttoliittyma;
 
-import UI.UserActionsInterface;
+
 import java.util.Scanner;
 
-public class Lukija implements UserActionsInterface{
+public class Lukija {
 
     Scanner l = new Scanner(System.in);
 
@@ -17,7 +17,7 @@ public class Lukija implements UserActionsInterface{
      *
      * @return
      */
-    @Override
+   
     public String kysyString(String viesti) {
         System.out.println(viesti);
         return l.nextLine();
@@ -30,7 +30,7 @@ public class Lukija implements UserActionsInterface{
      *
      * @return
      */
-    @Override
+    
     public int kysyInt(String viesti) {
         try {
             System.out.println(viesti);
@@ -44,12 +44,12 @@ public class Lukija implements UserActionsInterface{
      * Tulostaa käyttäjälle parametrinä annetun viestin
      * @param viesti tulostettava teksti
      */
-    @Override
+  
     public void kerroString(String viesti) {
         System.out.println(viesti);
     }
 
-    @Override
+ 
     public String kysyString() {
         return l.nextLine();
     }

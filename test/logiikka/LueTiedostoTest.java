@@ -34,7 +34,7 @@ public class LueTiedostoTest {
 //        Apuluokka luokka = new Apuluokka("ei-ole-olemassa-trololo\n/fs-0/a/jarmoiso/JavaLabra/src/SanaLista.txt\n");
         System.out.println("LueTiedosto");
         logiikka.LueTiedosto l = new logiikka.LueTiedosto();
-        Scanner lukija = l.lueTiedosto();
+        Scanner lukija = l.lueTied();
         assertTrue("Kun tiedostoa ei löyvy, annetaan virheilmoitus", io.getSysOut().contains("Tiedostoa ei löydy. Yritä uudestaan!"));
     }
     
@@ -44,7 +44,7 @@ public class LueTiedostoTest {
         io.setSysIn("src/SanaLista.txt\n");
         System.out.println("LueTiedosto");
         logiikka.LueTiedosto l = new logiikka.LueTiedosto();
-        Scanner lukija = l.lueTiedosto();
+        Scanner lukija = l.lueTied();
         String tmp = io.getSysOut();
         tmp = tmp.replace("Anna tiedoston sijainti: ", "");
         System.out.println(tmp);
