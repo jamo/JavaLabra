@@ -1,16 +1,15 @@
 
+import UI.GUI.BasicGUI;
+
 public class Main {
 
     public static void main(String[] args) {
-//        lueTiedosto l = new lueTiedosto();
-//        System.out.println("Luetaan tiedosto: ");
-//        lukija = l.lueTiedosto();
-//        SanatTaulukkoon st = new SanatTaulukkoon();
-        UI.Tekstikayttoliittyma.Tekstikayttoliittyma t = new UI.Tekstikayttoliittyma.Tekstikayttoliittyma();
-//        System.out.println(a);
-//        komentotulkki();
-//        komentotulkki();
-       
+
+//        UI.Tekstikayttoliittyma.Tekstikayttoliittyma t = new UI.Tekstikayttoliittyma.Tekstikayttoliittyma();
+
+        new BasicGUI().setVisible(true);
+
+
         //   src/SanaLista.txt
     }
 }

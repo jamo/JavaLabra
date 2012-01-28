@@ -14,29 +14,33 @@ import logiikka.SanatTaulukkoon;
  * @author jarmo
  */
 public class KyselyLogiikka {
+
     private UserActionsInterface ui;
-    public String kysyttySana, kysytynSananVastine;
+    private String kysyttySana, kysytynSananVastine;
     private ArrayList<KysSana> a;
     private ArrayList<KysSana> jarstettyV;
     private Lukija lukijaOlio = new Lukija();
     private int kohta = 0, siirSuunta = 1;
     private boolean kysSuunta = true;
+    private int oikein = 0, vaarin = 0;
 
 //    private HashMap<Integer, KysSana> h;
     /**
      * toteuttaa perus logiikan, joka vaaditaan tekstipohjaisen käyttöliittymän
      * alustamiseen. Lopuksi avaa komentotulkin.
      *
-     * @param uui Interface, jolla viestit välittää.
      */
-    public KyselyLogiikka(UserActionsInterface uui) {
-        this.ui = uui;
-        LueTiedosto l = new LueTiedosto();
-        Scanner tiedLukija = l.lueTiedosto();
+    public KyselyLogiikka(Scanner tiedostonLukija) {
+
+//        LueTiedosto l = new LueTiedosto();
+//        Scanner tiedLukija = l.lueTied();
+        Scanner tiedLukija = tiedostonLukija;
         SanatTaulukkoon st = new SanatTaulukkoon();
         a = st.lueSanat(tiedLukija);
         jarstettyV = a;
+        System.out.println(jarstettyV);
         System.out.println(a);
+        kohta=a.size();
 //        Lukija lukija = new Lukija();
 //        komentotulkki(lukija);
     }
@@ -81,6 +85,7 @@ public class KyselyLogiikka {
 //                random(ui);
 //            } else if (komento.equals("logiikka") || komento.equals("l")) {
 //                random(ui);
+//                TÄSSÄ PITÄISI KUTSUA LOGIIKKAA!!!
 //            } else {
 //                System.out.println("Komentoa ei tunnistettu!");
 //            }
@@ -92,10 +97,9 @@ public class KyselyLogiikka {
 //     public void kysyEdell(){
 //        kysy(kohta, kysSuunta, siirSuunta, null );
 //    }
-    public void kysySana() {
-        this.kohta = kysy(kohta, kysSuunta, siirSuunta, null);
-    }
-
+//    public void kysySana() {
+//        this.kohta = kysy(kohta, kysSuunta, siirSuunta);
+//    }
     public String getKysyttavaSana() {
         if (kysSuunta) {
             return a.get(kohta).getEka();
@@ -104,97 +108,61 @@ public class KyselyLogiikka {
         }
     }
 
-    /**
-     * jos suunta on true on suunta sana -> vastine. Jos false, niin on suunta
-     * Vastine -> sana 1 == eteenpäin -1 == taaksepäin ja 0 == pysy paikallaan
-     *
-     */
-    private int kysy(int kohta, boolean kysySuunta, int siirSuunta, UI.UserActionsInterface ui) {
-        String vastaus;
-
-
-        if (siirSuunta == 1) {
-            kohta = siirryEteenpain(kohta);
-        } else if (siirSuunta == -1) {
-            kohta = siirryEteenpain(kohta);
-        }
-        if (kysySuunta) {
-            vastaus = ui.kysyString("Anna sanan: " + a.get(kohta).getEka() + " vastine");
-            if (vastaus.equals(a.get(kohta).getToka())) {
-                a.get(kohta).meniOikein();
-                ui.kerroString("Oikein :D");
-            } else {
-                a.get(kohta).meniVaarin();
-                ui.kerroString("Väärin :(");
-            }
-        } else {
-            vastaus = ui.kysyString("Anna sanan: " + a.get(kohta).getToka() + " vastine");
-            if (vastaus.equals(a.get(kohta).getEka())) {
-                a.get(kohta).meniOikein();
-                ui.kysyString("Oikein :D");
-            } else {
-                a.get(kohta).meniVaarin();
-                ui.kerroString("Väärin :(");
-            }
-        }
-
-
-        return kohta;
-    }
-
+//   
     /**
      * asetetaan kysyttävä sana, ja kysytty sana haluttuihin muuttujiin, ja
      *
-     * @param kysySuunta jos true, niin sana -> vastine, jos false vastine ->
+     * @param ar
+     * param
+     *                                                                                                                       *                                                                                                                            kysySuunta jos
+     *                                                                                                                            true,
+     *                                                                                                                            niin
+     *                                                                                                                            sana
+     *                                                                                                                            ->
+     *                                                                                                                            vastine,
+     *                                                                                                                            jos
+     *                                                                                                                            false
+     *                                                                                                                            vastine
+     *                                                                                                                            ->
      * sana
      * @param siirSuunta jos 1, kysytään seuraavasana.jos -1, niin silloin
      * kysytään kohdassaoleva sana
      *
      * @return
      */
-    public int asetaKysymys(boolean kysySuunta, int siirSuunta) {
-        String vastaus;
+    public String asetaKysymys(ArrayList<KysSana> ar, boolean kysySuunta, int siirSuunta) {
 
         if (siirSuunta == 1) {
             kohta = siirryEteenpain(kohta);
         } else if (siirSuunta == -1) {
-            kohta = siirryEteenpain(kohta);
+            kohta = siirryTaaksipain(kohta);
         }
         //aloitetaan kysyminen
         if (kysySuunta) {
-            kysyttySana = a.get(kohta).getEka();
-            kysytynSananVastine = a.get(kohta).getToka();
+            kysyttySana = ar.get(kohta).getEka();
+            kysytynSananVastine = ar.get(kohta).getToka();
+            return kysyttySana;
         } else {
-            kysyttySana = a.get(kohta).getToka();
-            kysytynSananVastine = a.get(kohta).getEka();
+            kysyttySana = ar.get(kohta).getToka();
+            kysytynSananVastine = ar.get(kohta).getEka();
+            return kysytynSananVastine;
         }
-        return kohta;
+//        return kohta;
 //        return 0;
     }
 
-    public String tarkistaVastaus(String vastaus) {
+    public boolean tarkistaVastaus(String vastaus) {
         if (vastaus.equals(kysytynSananVastine)) {
             a.get(kohta).meniOikein();
-            this.ilmoitaOnnistumisesta();
+            oikein++;
+            return true;
         } else {
             a.get(kohta).meniVaarin();
-            this.ilmoitaVaainmenosta();
+            vaarin++;
+            return false;
         }
-        if (kysSuunta) {
-        }
-
-        return null;
     }
 
-    public void ilmoitaOnnistumisesta(){
-        
-        
-    }
-     public void ilmoitaVaainmenosta(){
-        
-        
-    }
-    
     /**
      * Eteenpäin siirryttäessä huolehtii siitä, ettei ylitetä taulukon rajoja.
      *
@@ -248,9 +216,10 @@ public class KyselyLogiikka {
      * paluuarvon. Tämä kutsuu methodia siirtymään eteenpäin.
      *
      */
-    private int kysyRandomVastineeseen(UI.UserActionsInterface ui) {
+    private String kysyRandomVastineeseen() {
         Random r = new Random();
-        return kysy(r.nextInt(a.size()), true, 0, ui);
+        kohta = r.nextInt(a.size());
+        return asetaKysymys(a, true, 0);
     }
 
     /**
@@ -258,46 +227,30 @@ public class KyselyLogiikka {
      * paluuarvon. Tämä kutsu metodia siirtymään taakseppäin
      *
      */
-    private int kysyRandomKohteeseen(UI.UserActionsInterface ui) {
+    private String kysyRandomKohteeseen() {
         Random r = new Random();
-        return kysy(r.nextInt(a.size()), false, 0, ui);
+        kohta = r.nextInt(a.size());
+        return asetaKysymys(a, false, 0);
     }
 
     /**
      * Kun halutaan random, tulee suunta valita - tämä hoitaa sen.
      *
+     * @param suunta
+     *
      * @return palauttaa int arvon joka on kyseinen kohta.
      *
      */
-    private int random(UI.UserActionsInterface ui) {
-        int suunta = lukijaOlio.kysyInt("Valitse suunta: \n1: sana -> vastine\n2:vastine -> sana");
-        if (suunta == 2) {
-            return kysyRandomKohteeseen(ui);
+    public String random(boolean suunta) {
+        if (suunta) {
+            return kysyRandomVastineeseen();
         } else {
-            return kysyRandomVastineeseen(ui);
+            return kysyRandomKohteeseen();
         }
     }
 
     /**
-     * Not yet included
-     *
-     * @return
-     *
-     */
-    private int logiikka(UI.UserActionsInterface ui) {
-        virheitaEniten(); //sorttaa jarjestettyV taulukon, jotta sitä voidaan kysellä.
-        String suunta = ui.kysyString("Anna suunta: \n1 = sana => vastine\n2 vastine => sana");
-        if (suunta.equals("2")) {
-            return alunPainotus(false, ui);
-        } else {
-            return alunPainotus(true, ui);
-        }
-
-
-//        return -1;
-    }
-
-    /**
+     * Sorttaa arraylistn, jossa kysyttävät sanat.
      *
      * @return
      *
@@ -313,7 +266,8 @@ public class KyselyLogiikka {
      * @return
      *
      */
-    private int alunPainotus(boolean suunta, UI.UserActionsInterface ui) {
+    public String alunPainotus(boolean suunta) {
+        virheitaEniten(); //Sortataan listaa
         Random r = new Random();
         double rajaRadom = Math.random();
         int koko = a.size();
@@ -325,14 +279,43 @@ public class KyselyLogiikka {
                 i = jarstettyV.size();
             }
         }
+        if (raja <= 0 && jarstettyV.size() > 1) {
+            raja = jarstettyV.size() / 2;
+        }
+        if (raja <= 1) {
+            kohta = 0;
+            return asetaKysymys(jarstettyV, kysSuunta, 0);
+        }
+
         if (rajaRadom <= (double) 2 / 3) {
-            r.nextInt(raja);
-            return kysy(r.nextInt(raja + 1), suunta, 1, ui);
+
+            kohta = r.nextInt(raja);
+            return asetaKysymys(jarstettyV, suunta, 0);
+//            return kysy(r.nextInt(raja + 1), suunta, 1);
             //eli nyt tänne kyselemään väärin menneitä;
         } else {
-            return kysy(r.nextInt(jarstettyV.size()), suunta, 1, ui);
+            kohta = r.nextInt(jarstettyV.size());
+            return asetaKysymys(jarstettyV, suunta, 0);
+//            return kysy(r.nextInt(jarstettyV.size()), suunta, 1);
             //eli tänne kyselemään oikeinmenneitä
         }
 
+
+    }
+
+    public int getVaarin() {
+        return vaarin;
+    }
+
+    public int getOikein() {
+        return oikein;
+    }
+
+    public int getYhteensa() {
+        return vaarin + oikein;
+    }
+
+    public ArrayList getA() {
+        return a;
     }
 }

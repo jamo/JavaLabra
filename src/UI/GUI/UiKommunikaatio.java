@@ -17,10 +17,14 @@ public class UiKommunikaatio implements UserActionsInterface {
     private javax.swing.JTextArea Kysymys;
     private javax.swing.JTextField Vastaus;
 
-    public UiKommunikaatio(JTextArea kysymys, JTextField vastaus) {
-        this.Kysymys = kysymys;
-        this.Vastaus = vastaus;
-    }
+//    public UiKommunikaatio(JTextArea kysymys, JTextField vastaus) {
+//        this.Kysymys = kysymys;
+//        this.Vastaus = vastaus;
+//    }
+   public UiKommunikaatio(){
+       
+       
+   }
 
     @Override
     public int kysyInt(String viesti) {

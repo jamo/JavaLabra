@@ -55,6 +55,15 @@ public class GuiItse extends JFrame {
         add(vastaus);
 //        add(viestikentta);
     }
+    
+    private void actionListenerit(){
+
+        
+        
+        
+        
+    }
+    
 
 
 }

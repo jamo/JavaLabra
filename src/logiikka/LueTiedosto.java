@@ -22,22 +22,22 @@ public class LueTiedosto {
      * tapahtuu virhe, niin koko prosesi aloitetaan alusta. Poistuminen ei
      * onnistu, ennenkuin on tiedosto saatu luettua. Palauttaa Scanner olion.
      */
-    public Scanner lueTiedosto() {
-        Scanner l = new Scanner(System.in);
-//        System.out.print("Anna tiedoston sijainti: ");
-        while (true) {
-            try {
-                System.out.print("Anna tiedoston sijainti: ");
-                tied = new File(l.nextLine());
-                filunLukija = new Scanner(tied);
-                return filunLukija;
-            } catch (Exception ex) {
-                System.out.println("Tiedostoa ei löydy. Yritä uudestaan! ");
-            }
-        }
-//        return null;
-
-    }
+//    public Scanner lueTiedosto() {
+//        Scanner l = new Scanner(System.in);
+////        System.out.print("Anna tiedoston sijainti: ");
+//        while (true) {
+//            try {
+//                System.out.print("Anna tiedoston sijainti: ");
+//                tied = new File(l.nextLine());
+//                filunLukija = new Scanner(tied);
+//                return filunLukija;
+//            } catch (Exception ex) {
+//                System.out.println("Tiedostoa ei löydy. Yritä uudestaan! ");
+//            }
+//        }
+////        return null;
+//
+//    }
 
     public Scanner lueTied() {
         Scanner l = new Scanner(System.in);
