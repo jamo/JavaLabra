@@ -74,7 +74,8 @@ public class KyselyLogiikka {
      * @return palautetaan kysytty sana
      */
     public String asetaKysymys(ArrayList<KysSana> ar, boolean kysySuunta, int siirSuunta) {
-
+        
+//        System.out.println("Kyssuunta");
         if (siirSuunta == 1) {
             kohta = siirryEteenpain(kohta);
         } else if (siirSuunta == -1) {
@@ -82,13 +83,15 @@ public class KyselyLogiikka {
         }
         //aloitetaan kysyminen
         if (kysySuunta) {
+            System.out.println("Kyssuunta = true");
             kysyttySana = ar.get(kohta).getEka();
             kysytynSananVastine = ar.get(kohta).getToka();
             return kysyttySana;
         } else {
+            System.out.println("Kysssuunta = flse");
             kysyttySana = ar.get(kohta).getToka();
             kysytynSananVastine = ar.get(kohta).getEka();
-            return kysytynSananVastine;
+            return kysyttySana;
         }
     }
 

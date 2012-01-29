@@ -5,7 +5,6 @@
 package UI.GUI;
 
 import UI.KyselyLogiikka;
-import javax.swing.JFrame;
 
 /**
  *

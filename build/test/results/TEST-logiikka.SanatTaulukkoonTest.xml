@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="localhost" name="logiikka.SanatTaulukkoonTest" tests="2" time="0.19" timestamp="2012-01-28T14:32:42">
+<testsuite errors="0" failures="0" hostname="localhost" name="logiikka.SanatTaulukkoonTest" tests="2" time="0.193" timestamp="2012-01-29T15:22:02">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -66,7 +66,7 @@
     <property name="manifest.available+main.class" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner logiikka.SanatTaulukkoonTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/jarmo/JavaLabra/build/test/results/TEST-logiikka.SanatTaulukkoonTest.xml crashfile=/home/jarmo/JavaLabra/build/junitvmwatcher4389956697508058438.properties propsfile=/home/jarmo/JavaLabra/build/junit4556544362472397504.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner logiikka.SanatTaulukkoonTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/jarmo/JavaLabra/build/test/results/TEST-logiikka.SanatTaulukkoonTest.xml crashfile=/home/jarmo/JavaLabra/build/junitvmwatcher5421728023984438810.properties propsfile=/home/jarmo/JavaLabra/build/junit6854728807774774599.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="jnlp.descriptor" value="application" />
@@ -131,7 +131,6 @@
     <property name="libs.junit.classpath" value="/home/jarmo/.netbeans/7.1/modules/ext/junit-3.8.2.jar" />
     <property name="libs.jaxb.javadoc" value="/usr/local/netbeans-7.1/ide/docs/jaxb-api-doc.zip" />
     <property name="libs.struts.classpath" value="/usr/local/netbeans-7.1/enterprise/modules/ext/struts/antlr-2.7.2.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/bsf-2.3.0.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/commons-beanutils-1.8.0.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/commons-chain-1.2.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/commons-digester-1.8.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/commons-fileupload-1.1.1.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/commons-io-1.1.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/commons-logging-1.0.4.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/commons-validator-1.3.1.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/jstl-1.0.2.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/oro-2.0.8.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/standard-1.0.6.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/struts-core-1.3.10.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/struts-el-1.3.10.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/struts-extras-1.3.10.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/struts-faces-1.3.10.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/struts-mailreader-dao-1.3.10.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/struts-scripting-1.3.10.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/struts-taglib-1.3.10.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/struts/struts-tiles-1.3.10.jar" />
-    <property name="org.openide.awt.SwingBrowserImpl.do-not-block-awt" value="false" />
     <property name="ant.home" value="/usr/local/netbeans-7.1/java/ant" />
     <property name="libs.junit_4.src" value="/home/jarmo/.netbeans/7.1/docs/junit-4.10-sources.jar" />
     <property name="libs.absolutelayout.maven-pom" value="" />
@@ -273,6 +272,7 @@
     <property name="javadoc.encoding.used" value="UTF-8" />
     <property name="libs.DataBindingME-SVG.src" value="/usr/local/netbeans-7.1/mobility/sources/netbeans_databindingme_svg-src.zip" />
     <property name="dist.jar" value="dist/JavaLabraJ.jar" />
+    <property name="netbeans.automatic.build" value="true" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="ant.project.name" value="LABRA" />
     <property name="netbeans.hash.code" value="unique=NB_CND_GROOVY_JAVA_MOB_PHP_TOMCAT_WEBEE054e8b2e1-008a-4d75-804d-0b2a0c27ed57_e820d0f4-72c5-41ce-a73b-589eae1ee475" />
@@ -449,8 +449,8 @@
     <property name="javadoc.nonavbar" value="false" />
     <property name="platform.active" value="default_platform" />
   </properties>
-  <testcase classname="logiikka.SanatTaulukkoonTest" name="sanatTaulukkoontest" time="0.0070" />
-  <testcase classname="logiikka.SanatTaulukkoonTest" name="sanatTaulukkoontest2" time="0.0010" />
+  <testcase classname="logiikka.SanatTaulukkoonTest" name="sanatTaulukkoontest" time="0.0060" />
+  <testcase classname="logiikka.SanatTaulukkoonTest" name="sanatTaulukkoontest2" time="0.0" />
   <system-out><![CDATA[Sanat luettu!
 Sanat luettu!
 ]]></system-out>
