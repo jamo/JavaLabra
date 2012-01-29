@@ -50,6 +50,7 @@ public class BasicGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(600, 400));
 
         SuunnanValitsin.add(Vastineeseen);
