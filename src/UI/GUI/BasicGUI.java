@@ -25,8 +25,14 @@ public class BasicGUI extends javax.swing.JFrame {
 
     private void tyhjennaOnnistuminen() {
         MitenMeni.setText("");
+    }
 
+    private void disableTarkista() {
+        TarkVastaus.setEnabled(false);
+    }
 
+    private void enableTarkista() {
+        TarkVastaus.setEnabled(true);
     }
 
     /**
@@ -54,6 +60,8 @@ public class BasicGUI extends javax.swing.JFrame {
         Yhteensa = new javax.swing.JLabel();
         KerrottuTeksti = new javax.swing.JLabel();
         MitenMeni = new javax.swing.JLabel();
+        NaytVastaus = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         MenuValikko = new javax.swing.JMenuBar();
         FileMenu = new javax.swing.JMenu();
         LopetaMenuItem = new javax.swing.JMenuItem();
@@ -121,6 +129,7 @@ public class BasicGUI extends javax.swing.JFrame {
         });
 
         TarkVastaus.setText("Tarkista");
+        TarkVastaus.setEnabled(false);
         TarkVastaus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TarkVastausActionPerformed(evt);
@@ -137,6 +146,12 @@ public class BasicGUI extends javax.swing.JFrame {
         KerrottuTeksti.setText("Arvaa sanan vastine");
 
         MitenMeni.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
+        MitenMeni.setText("hehee");
+
+        NaytVastaus.setText("NäytäVastaus");
+        NaytVastaus.setEnabled(false);
+
+        jLabel1.setText("Valitse suunta");
 
         FileMenu.setText("File");
 
@@ -180,55 +195,64 @@ public class BasicGUI extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(KysSeuraava, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(KysEdellinen, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Random)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Logiikka, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 61, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Vastaus, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TarkVastaus)))
+                        .addGap(104, 104, 104)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Onnistuneet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Vaarin, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Yhteensa, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(KerrottuTeksti)
+                            .addComponent(jLabel1)
+                            .addComponent(Vastineeseen, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(MitenMeni, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NaytVastaus, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Sanaan, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Vastaus, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TarkVastaus)))
+                                .addComponent(KysSeuraava, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Onnistuneet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Vaarin, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Yhteensa, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Vastineeseen, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Sanaan, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(KerrottuTeksti)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(MitenMeni, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(86, 86, 86))))
+                                .addComponent(KysEdellinen, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Random)
+                                .addGap(12, 12, 12)
+                                .addComponent(Logiikka, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(KerrottuTeksti)
-                    .addComponent(MitenMeni, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
-                .addComponent(Vastineeseen)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(MitenMeni, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(KerrottuTeksti)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NaytVastaus, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Vastineeseen))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Sanaan)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Onnistuneet)
@@ -237,8 +261,9 @@ public class BasicGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Yhteensa))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Vastaus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TarkVastaus))))
@@ -258,14 +283,10 @@ public class BasicGUI extends javax.swing.JFrame {
 
     private void VastineeseenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VastineeseenActionPerformed
         kysSuunta = true;
-        System.out.println("Kyssuunta = true");
-//        Vastineeseen.setSelected(true);
     }//GEN-LAST:event_VastineeseenActionPerformed
 
     private void SanaanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SanaanActionPerformed
         kysSuunta = false;
-//        Sanaan.setSelected(true);
-        System.out.println("Kyssuunta = false");
     }//GEN-LAST:event_SanaanActionPerformed
 
     private void KysSeuraavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KysSeuraavaActionPerformed
@@ -275,6 +296,8 @@ public class BasicGUI extends javax.swing.JFrame {
         Kysymys.setText("Anna sanan: " + kysyttavaSana + " vastine:");
         Vastaus.setText("");
         tyhjennaOnnistuminen();
+        enableTarkista();
+        
     }//GEN-LAST:event_KysSeuraavaActionPerformed
 
     private void KysEdellinenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KysEdellinenActionPerformed
@@ -282,6 +305,7 @@ public class BasicGUI extends javax.swing.JFrame {
         Kysymys.setText("Anna sanan: " + kysyttavaSana + " vastine:");
         Vastaus.setText("");
         tyhjennaOnnistuminen();
+        enableTarkista();
     }//GEN-LAST:event_KysEdellinenActionPerformed
 
     private void RandomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RandomActionPerformed
@@ -290,7 +314,7 @@ public class BasicGUI extends javax.swing.JFrame {
         Kysymys.setText("Anna sanan: " + kysyttava + " vastine:");
         Vastaus.setText("");
         tyhjennaOnnistuminen();
-
+        enableTarkista();
         //tämä kutsuu sitä kuuluisaa Randomia
     }//GEN-LAST:event_RandomActionPerformed
 
@@ -299,6 +323,7 @@ public class BasicGUI extends javax.swing.JFrame {
         String kysyttava = k.kysyLooginen(kysSuunta);
         Kysymys.setText("Anna sanan: " + kysyttava + " vastine:");
         Vastaus.setText("");
+        enableTarkista();
         tyhjennaOnnistuminen();
         //tänne loogisen kyselyn vaatimat kyselyt
     }//GEN-LAST:event_LogiikkaActionPerformed
@@ -309,8 +334,9 @@ public class BasicGUI extends javax.swing.JFrame {
         String vastaus = Vastaus.getText();
         boolean onnistui = k.tarkSana(vastaus);
         Onnistuneet.setText("Oikein: " + k.getOikein());
-        Vaarin.setText("Vaarin: " + k.getVaarin());
+        Vaarin.setText("Väärin: " + k.getVaarin());
         Yhteensa.setText("Yhteensä: " + k.getYhteensa());
+        disableTarkista();
         if (onnistui) {
             MitenMeni.setText("Oikein");
             MitenMeni.setForeground(Color.GREEN);
@@ -392,6 +418,7 @@ public class BasicGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem LopetaMenuItem;
     private javax.swing.JMenuBar MenuValikko;
     private javax.swing.JLabel MitenMeni;
+    private javax.swing.JButton NaytVastaus;
     private javax.swing.JLabel Onnistuneet;
     private javax.swing.JButton Random;
     private javax.swing.JRadioButton Sanaan;
@@ -401,6 +428,7 @@ public class BasicGUI extends javax.swing.JFrame {
     private javax.swing.JTextField Vastaus;
     private javax.swing.JRadioButton Vastineeseen;
     private javax.swing.JLabel Yhteensa;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -43,7 +43,10 @@ public class KyselyLogiikka {
 //        Lukija lukija = new Lukija();
 //        komentotulkki(lukija);
     }
-
+    /**
+     * Asettaa kyselyyn liittyvän kohdan
+     * @param luku 
+     */
     public void setKohta(int luku) {
         this.kohta = luku;
     }
