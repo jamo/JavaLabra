@@ -93,14 +93,14 @@ public class BasicGUI extends javax.swing.JFrame {
             }
         });
 
-        Random.setText("Kysys Satunnainen");
+        Random.setText("Kysy Satunnainen");
         Random.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RandomActionPerformed(evt);
             }
         });
 
-        Logiikka.setText("Kysys Painotetusti");
+        Logiikka.setText("Kysy Painotetusti");
         Logiikka.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogiikkaActionPerformed(evt);
@@ -141,7 +141,7 @@ public class BasicGUI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Logiikka, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1))
-                        .addGap(0, 48, Short.MAX_VALUE))
+                        .addGap(0, 55, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
