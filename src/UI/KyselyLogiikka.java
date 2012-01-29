@@ -18,21 +18,17 @@ public class KyselyLogiikka {
     private String kysyttySana, kysytynSananVastine;
     private ArrayList<KysSana> a;
     private ArrayList<KysSana> jarstettyV;
-//    private Lukija lukijaOlio = new Lukija();
     private int kohta = 0, siirSuunta = 1;
     private boolean kysSuunta = true;
     private int oikein = 0, vaarin = 0;
 
-//    private HashMap<Integer, KysSana> h;
     /**
      * toteuttaa perus logiikan, joka vaaditaan tekstipohjaisen käyttöliittymän
      * alustamiseen. Lopuksi avaa komentotulkin.
      *
+     * @param tiedostonLukija
      */
     public KyselyLogiikka(Scanner tiedostonLukija) {
-
-//        LueTiedosto l = new LueTiedosto();
-//        Scanner tiedLukija = l.lueTied();
         Scanner tiedLukija = tiedostonLukija;
         SanatTaulukkoon st = new SanatTaulukkoon();
         a = st.lueSanat(tiedLukija);
@@ -40,25 +36,20 @@ public class KyselyLogiikka {
         System.out.println(jarstettyV);
         System.out.println(a);
         kohta = a.size();
-//        Lukija lukija = new Lukija();
-//        komentotulkki(lukija);
     }
+
     /**
-     * Asettaa kyselyyn liittyvän kohdan
-     * @param luku 
+     *
+     * @param suunta
      */
-    public void setKohta(int luku) {
-        this.kohta = luku;
-    }
-
-    public int getKohta() {
-        return this.kohta;
-    }
-
     public void setSiirSuunta(int suunta) {
         this.siirSuunta = suunta;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getKysyttavaSana() {
         if (kysSuunta) {
             return a.get(kohta).getEka();
@@ -66,18 +57,30 @@ public class KyselyLogiikka {
             return a.get(kohta).getToka();
         }
     }
+    
+       public String getVastaus() {
+        if (!kysSuunta) {
+            return a.get(kohta).getEka();
+        } else {
+            return a.get(kohta).getToka();
+        }
+    }
 
 //   
-    
     /**
-     * Asetetaan kysyttävä sana ja sille vastine sanan oikeellisuuden tarkastamista varten.
-     * @param ar arraylist, josta sana haetaan, sanojen järjestyksen vuoksi.
+     * Asetetaan kysyttävä sana ja sille vastine sanan oikeellisuuden
+     * tarkastamista varten.
+     *
+     * @param ar         arraylist, josta sana haetaan, sanojen järjestyksen
+     * vuoksi.
      * @param kysySuunta jos true, nii sana -> vastine, muutoin vastine -> sana
-     * @param siirSuunta jos 1 kysytään seuraava, jos -1  kysytään edellinen, jos muu, kysytään kohdassa oleva sana.
+     * @param siirSuunta jos 1 kysytään seuraava, jos -1 kysytään edellinen, jos
+     * muu, kysytään kohdassa oleva sana.
+     *
      * @return palautetaan kysytty sana
      */
     public String asetaKysymys(ArrayList<KysSana> ar, boolean kysySuunta, int siirSuunta) {
-        
+
 //        System.out.println("Kyssuunta");
         if (siirSuunta == 1) {
             kohta = siirryEteenpain(kohta);
@@ -98,6 +101,12 @@ public class KyselyLogiikka {
         }
     }
 
+    /**
+     *
+     * @param vastaus
+     *
+     * @return
+     */
     public boolean tarkistaVastaus(String vastaus) {
         if (vastaus.equals(kysytynSananVastine)) {
             a.get(kohta).meniOikein();

@@ -51,4 +51,11 @@ public class GuiValiKommunikaatio {
     public int getYhteensa() {
         return k.getYhteensa();
     }
+    
+    public String getKysytty(){
+        return k.getKysyttavaSana();
+    }
+    public String getVastaus(){
+        return k.getVastaus();
+    }
 }

@@ -150,6 +150,11 @@ public class BasicGUI extends javax.swing.JFrame {
 
         NaytVastaus.setText("NäytäVastaus");
         NaytVastaus.setEnabled(false);
+        NaytVastaus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NaytVastausActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Valitse suunta");
 
@@ -297,7 +302,7 @@ public class BasicGUI extends javax.swing.JFrame {
         Vastaus.setText("");
         tyhjennaOnnistuminen();
         enableTarkista();
-        
+        NaytVastaus.setEnabled(false);
     }//GEN-LAST:event_KysSeuraavaActionPerformed
 
     private void KysEdellinenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KysEdellinenActionPerformed
@@ -306,6 +311,7 @@ public class BasicGUI extends javax.swing.JFrame {
         Vastaus.setText("");
         tyhjennaOnnistuminen();
         enableTarkista();
+        NaytVastaus.setEnabled(false);
     }//GEN-LAST:event_KysEdellinenActionPerformed
 
     private void RandomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RandomActionPerformed
@@ -315,6 +321,7 @@ public class BasicGUI extends javax.swing.JFrame {
         Vastaus.setText("");
         tyhjennaOnnistuminen();
         enableTarkista();
+        NaytVastaus.setEnabled(false);
         //tämä kutsuu sitä kuuluisaa Randomia
     }//GEN-LAST:event_RandomActionPerformed
 
@@ -325,6 +332,7 @@ public class BasicGUI extends javax.swing.JFrame {
         Vastaus.setText("");
         enableTarkista();
         tyhjennaOnnistuminen();
+        NaytVastaus.setEnabled(false);
         //tänne loogisen kyselyn vaatimat kyselyt
     }//GEN-LAST:event_LogiikkaActionPerformed
 
@@ -337,6 +345,7 @@ public class BasicGUI extends javax.swing.JFrame {
         Vaarin.setText("Väärin: " + k.getVaarin());
         Yhteensa.setText("Yhteensä: " + k.getYhteensa());
         disableTarkista();
+        NaytVastaus.setEnabled(true);
         if (onnistui) {
             MitenMeni.setText("Oikein");
             MitenMeni.setForeground(Color.GREEN);
@@ -360,6 +369,10 @@ public class BasicGUI extends javax.swing.JFrame {
 
         new Copyright().setVisible(true);
     }//GEN-LAST:event_CopyrightInfoActionPerformed
+
+    private void NaytVastausActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NaytVastausActionPerformed
+        JOptionPane.showMessageDialog(null, "Sanan: \"" + k.getKysytty() + "\" vastine on : \""+ k.getVastaus()+ "\"");
+    }//GEN-LAST:event_NaytVastausActionPerformed
 
     /**
      * @param args the command line arguments

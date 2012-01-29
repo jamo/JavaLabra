@@ -8,9 +8,6 @@ public class Main  {
 //        UI.Tekstikayttoliittyma.Tekstikayttoliittyma t = new UI.Tekstikayttoliittyma.Tekstikayttoliittyma();
 
         new BasicGUI().setVisible(true);
-
-
-        
         //   src/SanaLista.txt
     }
 }
