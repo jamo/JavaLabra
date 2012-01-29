@@ -1,5 +1,6 @@
 package UI.GUI;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,8 +17,10 @@ public class BasicGUI extends javax.swing.JFrame {
      */
     public BasicGUI() {
         initComponents();
+        
     }
 
+    
     /**
      * This method is called from within the constructor to
      * initialize the form.
@@ -45,6 +48,9 @@ public class BasicGUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMinimumSize(new java.awt.Dimension(600, 400));
 
         SuunnanValitsin.add(Vastineeseen);
         Vastineeseen.setSelected(true);
@@ -190,6 +196,8 @@ public class BasicGUI extends javax.swing.JFrame {
                 .addGap(118, 118, 118))
         );
 
+        getAccessibleContext().setAccessibleName("jFrame1");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -295,6 +303,7 @@ public class BasicGUI extends javax.swing.JFrame {
 
             public void run() {
                 new BasicGUI().setVisible(true);
+                
             }
         });
     }

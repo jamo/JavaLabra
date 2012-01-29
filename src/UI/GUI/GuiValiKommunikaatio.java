@@ -5,15 +5,17 @@
 package UI.GUI;
 
 import UI.KyselyLogiikka;
+import javax.swing.JFrame;
 
 /**
  *
  * @author jarmo
  */
 public class GuiValiKommunikaatio {
-   
+
     private GuiLueTiedosto gl = new GuiLueTiedosto();
-    private KyselyLogiikka k = new KyselyLogiikka(gl.lueTied());
+//    private KyselyLogiikka k = new KyselyLogiikka(gl.lueTied());
+    private KyselyLogiikka k = new KyselyLogiikka(gl.lueTiedosto3());
 
     public String kysyNext(boolean kysSuunta) {
         return k.asetaKysymys(k.getA(), kysSuunta, 1);
