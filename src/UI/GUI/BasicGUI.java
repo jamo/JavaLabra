@@ -146,7 +146,6 @@ public class BasicGUI extends javax.swing.JFrame {
         KerrottuTeksti.setText("Arvaa sanan vastine");
 
         MitenMeni.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
-        MitenMeni.setText("hehee");
 
         NaytVastaus.setText("NäytäVastaus");
         NaytVastaus.setEnabled(false);
