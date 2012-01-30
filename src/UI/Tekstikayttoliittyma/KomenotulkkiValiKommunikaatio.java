@@ -7,6 +7,7 @@ package UI.Tekstikayttoliittyma;
 //import UI.GUI.GuiLueTiedosto;
 import UI.GUI.GuiLueTiedosto;
 import UI.KyselyLogiikka;
+import logiikka.LueTiedosto;
 
 /**
  *
@@ -15,9 +16,17 @@ import UI.KyselyLogiikka;
 public class KomenotulkkiValiKommunikaatio {
     
 //    private GuiLueTiedosto gl = new GuiLueTiedosto();
-    private logiikka.LueTiedosto l = new logiikka.LueTiedosto();
-    private KyselyLogiikka k = new KyselyLogiikka(l.lueTied());
+    
+    private KyselyLogiikka k;
 
+    public KomenotulkkiValiKommunikaatio(){
+        logiikka.LueTiedosto l = new logiikka.LueTiedosto();
+        k = new KyselyLogiikka(l.lueTied());
+        
+    }
+    public KomenotulkkiValiKommunikaatio(KyselyLogiikka lt){
+        k = lt;
+    }
 
     public String kysyNext(boolean kysSuunta) {
         return k.asetaKysymys(k.getA(), kysSuunta, 1);

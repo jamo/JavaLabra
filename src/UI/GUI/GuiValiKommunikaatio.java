@@ -12,9 +12,18 @@ import UI.KyselyLogiikka;
  */
 public class GuiValiKommunikaatio {
 
-    private GuiLueTiedosto gl = new GuiLueTiedosto();
-//    private KyselyLogiikka k = new KyselyLogiikka(gl.lueTied());
-    private KyselyLogiikka k = new KyselyLogiikka(gl.lueTiedosto3());
+    private GuiLueTiedosto gl;
+    private KyselyLogiikka k;
+
+    public GuiValiKommunikaatio() {
+        gl = new GuiLueTiedosto();
+        k = new KyselyLogiikka(gl.lueTiedosto3());
+    }
+
+    public GuiValiKommunikaatio(KyselyLogiikka kl) {
+        k = kl;
+
+    }
 
     public String kysyNext(boolean kysSuunta) {
         return k.asetaKysymys(k.getA(), kysSuunta, 1);
@@ -51,11 +60,12 @@ public class GuiValiKommunikaatio {
     public int getYhteensa() {
         return k.getYhteensa();
     }
-    
-    public String getKysytty(){
+
+    public String getKysytty() {
         return k.getKysyttavaSana();
     }
-    public String getVastaus(){
+
+    public String getVastaus() {
         return k.getVastaus();
     }
 }
