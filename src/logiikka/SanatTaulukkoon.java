@@ -4,12 +4,19 @@ package logiikka;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+/**
+ * Luokka, joka siirtää luetut sanat arayList taulukkoon KysSana olioina.
+ * @author jarmo
+ */
 public class SanatTaulukkoon {
 
     private ArrayList<KysSana> lista;
 
-    /*
+    /**
      * Lukee sanat ArrayList<kysSana> talukkoon ja palauttaa taulukon.
+     * @param lukija Scanner ilmentymä, josta sanat luodaan.
+     * @return  palauttaa listan sanoista
      */
     public ArrayList lueSanat(Scanner lukija) {
         String sana, vastine;
@@ -28,8 +35,6 @@ public class SanatTaulukkoon {
                 vastine = "sanalla ei ollut arvoa!";
                 System.out.println("'Vastine' luokassa Sanat ei saanut arvoa!");
             }
-//            System.out.println("Sana: "+ sana);
-//            System.out.println("Vastine: "+ vastine);
             lista.add(new KysSana(sana, vastine));
         }
         System.out.println("Sanat luettu!");

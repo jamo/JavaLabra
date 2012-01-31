@@ -1,23 +1,27 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package UI.GUI;
 
 /**
+ * Luokka, joka luo gui näkymän, joka näyttää version tästä sovelluksesta.
  *
  * @author jarmo
  */
 public class AboutVersion extends javax.swing.JDialog {
 
     /**
-     * Creates new form AboutVersion
+     * luo uuden about varsion ilmentymän
+     *
+     * @param parent
+param
+     *                                                                     modal
      */
     public AboutVersion(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
 
+    /**
+     * luo uuden about varsion ilmentymän
+     */
     public AboutVersion() {
         initComponents();
     }

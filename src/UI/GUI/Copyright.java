@@ -1,11 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package UI.GUI;
 
 /**
- *
+ * Luokka joka avaa gui ikkunan ja näyttää copyright ilmoituksen
  * @author jarmo
  */
 public class Copyright extends javax.swing.JDialog {

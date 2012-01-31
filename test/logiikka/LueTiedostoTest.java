@@ -17,14 +17,14 @@ public class LueTiedostoTest {
 
 //Tämä tapa ei ihan yhtä kaunis?
 //    /**
-//     * Test of LueTiedosto method, of class LueTiedosto.
+//     * Test of ValitseTiedosto method, of class ValitseTiedosto.
 //     */
 //    @Test
 //    public void testLueTiedosto() {
 //        Apuluokka luokka = new Apuluokka("ei-ole-olemassa-trololo\nsrc/SanaLista.txt\n");
 ////        Apuluokka luokka = new Apuluokka("ei-ole-olemassa-trololo\n/fs-0/a/jarmoiso/JavaLabra/src/SanaLista.txt\n");
-//        System.out.println("LueTiedosto");
-//        logiikka.LueTiedosto l = new logiikka.LueTiedosto();
+//        System.out.println("ValitseTiedosto");
+//        logiikka.ValitseTiedosto l = new logiikka.ValitseTiedosto();
 //        Scanner lukija = l.lueTiedosto();
 //    }
     @Test
@@ -33,7 +33,7 @@ public class LueTiedostoTest {
         io.setSysIn("tololololoo\nsrc/SanaLista.txt\n");
 //        Apuluokka luokka = new Apuluokka("ei-ole-olemassa-trololo\n/fs-0/a/jarmoiso/JavaLabra/src/SanaLista.txt\n");
         System.out.println("LueTiedosto");
-        logiikka.LueTiedosto l = new logiikka.LueTiedosto();
+        logiikka.ValitseTiedosto l = new logiikka.ValitseTiedosto();
         Scanner lukija = l.lueTied();
         assertTrue("Kun tiedostoa ei löyvy, annetaan virheilmoitus", io.getSysOut().contains("Tiedostoa ei löydy. Yritä uudestaan!"));
     }
@@ -43,7 +43,7 @@ public class LueTiedostoTest {
        
         io.setSysIn("src/SanaLista.txt\n");
         System.out.println("LueTiedosto");
-        logiikka.LueTiedosto l = new logiikka.LueTiedosto();
+        logiikka.ValitseTiedosto l = new logiikka.ValitseTiedosto();
         Scanner lukija = l.lueTied();
         String tmp = io.getSysOut();
         tmp = tmp.replace("Anna tiedoston sijainti: ", "");

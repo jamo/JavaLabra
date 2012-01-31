@@ -8,8 +8,6 @@ import org.junit.Test;
 
 public class SanatTaulukkoonTest {
 
-//    @Rule
-//    public MockStdio io = new MockStdio();
 
     
     @Test

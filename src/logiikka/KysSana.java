@@ -1,5 +1,12 @@
 package logiikka;
 
+/**
+ * KysSana luokka, joka sisöltää sanaparit joihin säilötään sana ja vastine.
+ * Sanat tietävät siis vastineensa ja mukana kulkee tieto siitä, montko kertaa
+ * käännös on onnistunut jä epäonnitunut
+ *
+ * @author jarmo
+ */
 public class KysSana implements Comparable<KysSana> {
 
     private String eka, toka;
@@ -16,11 +23,13 @@ public class KysSana implements Comparable<KysSana> {
         this.eka = eka;
         this.toka = toka;
     }
-
+    
     /**
-     * Tyhjä oletus konstruktori
+     * tyhjä oletuskonstruktori.
      */
-    public KysSana() {
+    public KysSana(){
+        
+        
     }
 
     /**
@@ -137,7 +146,7 @@ public class KysSana implements Comparable<KysSana> {
      * @param verrattavaComp verrattava ilmentymä
      *
      * @return palauttaa arvon , >0 jos this omaa suuremman painooarvon, 0 jos
-     *         sama ja <0 jos this omaa pienemmän painoarvon
+     * sama ja <0 jos this omaa pienemmän painoarvon
      */
     @Override
     public int compareTo(KysSana verrattavaComp) {

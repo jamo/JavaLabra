@@ -15,7 +15,10 @@ import org.junit.Test;
  */
 public class KysSanaTest {
 
-     @Rule
+    /**
+     * Tällainan tarvotaan mockia varten.
+     */
+    @Rule
     public MockStdio io = new MockStdio();
      
     @Test

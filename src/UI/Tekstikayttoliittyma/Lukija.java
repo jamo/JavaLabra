@@ -1,8 +1,12 @@
 package UI.Tekstikayttoliittyma;
 
-
 import java.util.Scanner;
 
+/**
+ * Luokka, joka totetuuaa kaiken kommunikaation komentotulkkikäyttöliittymässä.
+ *
+ * @author jarmo
+ */
 public class Lukija {
 
     Scanner l = new Scanner(System.in);
@@ -17,7 +21,6 @@ public class Lukija {
      *
      * @return
      */
-   
     public String kysyString(String viesti) {
         System.out.println(viesti);
         return l.nextLine();
@@ -30,7 +33,6 @@ public class Lukija {
      *
      * @return
      */
-    
     public int kysyInt(String viesti) {
         try {
             System.out.println(viesti);
@@ -42,17 +44,19 @@ public class Lukija {
 
     /**
      * Tulostaa käyttäjälle parametrinä annetun viestin
+     *
      * @param viesti tulostettava teksti
      */
-  
     public void kerroString(String viesti) {
         System.out.println(viesti);
     }
 
- 
+    /**
+     * Kysyy käyttäjältä String merkkijonon, ilman viestiä.
+     *
+     * @return palauttaa käyttäjän syöttämän tekstirivin.
+     */
     public String kysyString() {
         return l.nextLine();
     }
-
-    
 }

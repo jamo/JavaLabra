@@ -1,18 +1,18 @@
 package UI.GUI;
 
+import UI.ValiKommunikaatio;
 import java.awt.Color;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import sun.nio.cs.ext.GB18030;
 
 /**
- *
+ * BasicGUI on luokka, jossa suurin osa graafisest akäyttöliittymästä on toteutettu.
+ * Luokka hyödyntää kylelyogiikan komponentteja kysellessään sanoja ja vastineita käyttäjältä.
  * @author jarmo
  */
 public class BasicGUI extends javax.swing.JFrame {
 
     private boolean kysSuunta = true;
-    GuiValiKommunikaatio k = new GuiValiKommunikaatio();
+    ValiKommunikaatio k = new ValiKommunikaatio(true);
 
     /**
      * Creates new form BasicGUI

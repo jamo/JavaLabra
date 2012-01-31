@@ -4,6 +4,7 @@
  */
 package UI;
 
+import logiikka.KyselyLogiikka;
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.Scanner;

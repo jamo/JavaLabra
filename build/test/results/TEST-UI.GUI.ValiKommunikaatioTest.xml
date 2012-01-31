@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="linux" name="UI.GUI.GuiValiKommunikaatioTest" tests="11" time="0.124" timestamp="2012-01-31T07:49:34">
+<testsuite errors="0" failures="0" hostname="linux" name="UI.GUI.ValiKommunikaatioTest" tests="11" time="0.1" timestamp="2012-01-31T22:37:29">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -66,7 +66,7 @@
     <property name="manifest.available+main.class" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner UI.GUI.GuiValiKommunikaatioTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/jarmo/JavaLabra/build/test/results/TEST-UI.GUI.GuiValiKommunikaatioTest.xml crashfile=/home/jarmo/JavaLabra/build/junitvmwatcher5073240644571200056.properties propsfile=/home/jarmo/JavaLabra/build/junit8129903898834606754.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner UI.GUI.ValiKommunikaatioTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/jarmo/JavaLabra/build/test/results/TEST-UI.GUI.ValiKommunikaatioTest.xml crashfile=/home/jarmo/JavaLabra/build/junitvmwatcher527277784947511628.properties propsfile=/home/jarmo/JavaLabra/build/junit7049792245880721078.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="jnlp.descriptor" value="application" />
@@ -272,7 +272,6 @@
     <property name="javadoc.encoding.used" value="UTF-8" />
     <property name="libs.DataBindingME-SVG.src" value="/usr/local/netbeans-7.1/mobility/sources/netbeans_databindingme_svg-src.zip" />
     <property name="dist.jar" value="dist/JavaLabraJ.jar" />
-    <property name="netbeans.automatic.build" value="true" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="ant.project.name" value="LABRA" />
     <property name="netbeans.hash.code" value="unique=NB_CND_GROOVY_JAVA_MOB_PHP_TOMCAT_WEBEE054e8b2e1-008a-4d75-804d-0b2a0c27ed57_e820d0f4-72c5-41ce-a73b-589eae1ee475" />
@@ -286,30 +285,30 @@
     <property name="libs.hibernate-support.classpath" value="/usr/local/netbeans-7.1/java/modules/ext/hibernate/antlr-2.7.6.jar:/usr/local/netbeans-7.1/java/modules/ext/hibernate/asm.jar:/usr/local/netbeans-7.1/java/modules/ext/hibernate/asm-attrs.jar:/usr/local/netbeans-7.1/java/modules/ext/hibernate/cglib-2.1.3.jar:/usr/local/netbeans-7.1/java/modules/ext/hibernate/commons-collections-2.1.1.jar:/usr/local/netbeans-7.1/ide/modules/org-apache-commons-logging.jar:/usr/local/netbeans-7.1/java/modules/ext/hibernate/dom4j-1.6.1.jar:/usr/local/netbeans-7.1/java/modules/ext/hibernate/ehcache-1.2.3.jar:/usr/local/netbeans-7.1/java/modules/ext/hibernate/jdbc2_0-stdext.jar:/usr/local/netbeans-7.1/java/modules/ext/hibernate/jta.jar:/usr/local/netbeans-7.1/java/modules/ext/hibernate/hibernate3.jar:/usr/local/netbeans-7.1/java/modules/ext/hibernate/hibernate-tools.jar:/usr/local/netbeans-7.1/java/modules/ext/hibernate/hibernate-annotations.jar:/usr/local/netbeans-7.1/java/modules/ext/hibernate/hibernate-commons-annotations.jar:/usr/local/netbeans-7.1/java/modules/ext/hibernate/hibernate-entitymanager.jar:/usr/local/netbeans-7.1/java/modules/ext/hibernate/javassist.jar" />
     <property name="user.home" value="/home/jarmo" />
     <property name="annotation.processing.processors.list" value="" />
-    <property name="debug-args-line" value="-Xdebug" />
     <property name="file.reference.javassist-3.15.0-GA.jar" value="lib/javassist-3.15.0-GA.jar" />
     <property name="libs.primefaces.maven-pom" value="" />
+    <property name="debug-args-line" value="-Xdebug" />
     <property name="sun.zip.disableMemoryMapping" value="true" />
     <property name="libs.NetBeans MIDP Components.classpath" value="/usr/local/netbeans-7.1/mobility/modules/ext/netbeans_midp_components_basic.jar" />
     <property name="libs.javaee-api-6.0.maven-pom" value="" />
-    <property name="ant.file.type.JavaLabraJ-impl" value="file" />
     <property name="libs.JWSAntTasks.src" value="" />
-    <property name="jar.index" value="false" />
+    <property name="ant.file.type.JavaLabraJ-impl" value="file" />
     <property name="libs.CopyLibs.maven-pom" value="" />
-    <property name="libs.spring-framework300.javadoc" value="" />
-    <property name="libs.absolutelayout.javadoc" value="" />
+    <property name="jar.index" value="false" />
     <property name="libs.hibernate-persistence.maven-pom" value="" />
+    <property name="libs.absolutelayout.javadoc" value="" />
+    <property name="libs.spring-framework300.javadoc" value="" />
     <property name="java.specification.name" value="Java Platform API Specification" />
-    <property name="libs.NetBeans MIDP Components WMA.classpath" value="/usr/local/netbeans-7.1/mobility/modules/ext/netbeans_midp_components_wma.jar" />
     <property name="libs.jakarta_slide_ant_webdav.maven-pom" value="" />
+    <property name="libs.NetBeans MIDP Components WMA.classpath" value="/usr/local/netbeans-7.1/mobility/modules/ext/netbeans_midp_components_wma.jar" />
     <property name="do.archive+main.class.available" value="true" />
     <property name="libs.sjmc-ant-utils.src" value="" />
     <property name="jnlp.mixed.code" value="default" />
-    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
     <property name="libs.cdc-agui-swing-layout.javadoc" value="" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
     <property name="libs.javac-api.classpath" value="/usr/local/netbeans-7.1/java/modules/ext/javac-api-nb-7.0-b07.jar" />
-    <property name="libs.nokiaS80-ant-utils.classpath" value="/usr/local/netbeans-7.1/mobility/modules/ext/org-netbeans-modules-j2me-cdc-project-nokiaS80.jar" />
     <property name="java.version" value="1.6.0_26" />
+    <property name="libs.nokiaS80-ant-utils.classpath" value="/usr/local/netbeans-7.1/mobility/modules/ext/org-netbeans-modules-j2me-cdc-project-nokiaS80.jar" />
     <property name="javadoc.version" value="false" />
     <property name="libs.NetBeans MIDP Components WMA.javadoc" value="/usr/local/netbeans-7.1/mobility/modules/docs/netbeans_midp_components_wma-api.zip" />
     <property name="file.reference.easymock-3.1.jar" value="lib/easymock-3.1.jar" />
@@ -326,8 +325,8 @@
     <property name="netbeans.home+have.tests" value="true" />
     <property name="annotation.processing.processor.options" value="" />
     <property name="libs.jaxb.src" value="" />
-    <property name="libs.cdc-ant-utils.src" value="" />
     <property name="work.dir" value="/home/jarmo/JavaLabra" />
+    <property name="libs.cdc-ant-utils.src" value="" />
     <property name="libs.jaxb.classpath" value="/usr/local/netbeans-7.1/ide/modules/ext/jaxb/jaxb-impl.jar:/usr/local/netbeans-7.1/ide/modules/ext/jaxb/jaxb-xjc.jar:/usr/local/netbeans-7.1/ide/modules/ext/jaxb/jaxb1-impl.jar:/usr/local/netbeans-7.1/ide/modules/ext/jaxb/activation.jar:/usr/local/netbeans-7.1/ide/modules/ext/jaxb/api/jaxb-api.jar:/usr/local/netbeans-7.1/ide/modules/ext/jaxb/api/jsr173_api.jar" />
     <property name="do.depend" value="false" />
     <property name="ant.file.LABRA" value="/home/jarmo/JavaLabra/build.xml" />
@@ -367,8 +366,8 @@
     <property name="libs.groovy-all.javadoc" value="" />
     <property name="do.archive+manifest.available+main.class" value="true" />
     <property name="libs.groovy-all.classpath" value="/usr/local/netbeans-7.1/groovy/modules/ext/groovy-all.jar" />
-    <property name="javac.fork" value="false" />
     <property name="libs.sjmc-ant-utils.classpath" value="/usr/local/netbeans-7.1/mobility/modules/ext/org-netbeans-modules-j2me-cdc-project-sjmc.jar" />
+    <property name="javac.fork" value="false" />
     <property name="libs.JMUnit4CLDC10.classpath" value="/usr/local/netbeans-7.1/mobility/modules/ext/jmunit4cldc10-1.2.1.jar" />
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob" />
     <property name="default.javac.source" value="1.6" />
@@ -405,14 +404,14 @@
     <property name="libs.DataBindingME.javadoc" value="/usr/local/netbeans-7.1/mobility/modules/docs/netbeans_databindingme-api.zip" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
     <property name="java.class.path" value="/home/jarmo/JavaLabra/build/classes:/home/jarmo/JavaLabra/lib/junit-4.10.jar:/home/jarmo/JavaLabra/lib/edu-test-utils.jar:/home/jarmo/JavaLabra/lib/cglib-nodep-2.2.2.jar:/home/jarmo/JavaLabra/lib/easymock-3.1.jar:/home/jarmo/JavaLabra/lib/javassist-3.15.0-GA.jar:/home/jarmo/JavaLabra/lib/objenesis-1.2.jar:/home/jarmo/JavaLabra/lib/powermock-easymock-1.4.11-full.jar:/home/jarmo/JavaLabra/build/test/classes:/usr/local/netbeans-7.1/java/ant/lib/ant-launcher.jar:/usr/local/netbeans-7.1/java/ant/lib/ant.jar:/usr/local/netbeans-7.1/java/ant/lib/ant-junit.jar:/usr/local/netbeans-7.1/java/ant/lib/ant-junit4.jar" />
-    <property name="file.reference.edu-test-utils.jar" value="lib/edu-test-utils.jar" />
     <property name="do.mkdist" value="true" />
+    <property name="file.reference.edu-test-utils.jar" value="lib/edu-test-utils.jar" />
     <property name="libs.absolutelayout.src" value="" />
     <property name="libs.cdc-pp-awt-layout.maven-pom" value="" />
     <property name="os.version" value="3.0.0-14-generic-pae" />
     <property name="application.args" value="" />
-    <property name="main.class.available" value="true" />
     <property name="libs.JMUnit4CLDC11.maven-pom" value="" />
+    <property name="main.class.available" value="true" />
     <property name="libs.toplink.javadoc" value="" />
     <property name="sun.desktop" value="gnome" />
     <property name="libs.nb_svg_midp_components.maven-pom" value="" />
@@ -420,8 +419,8 @@
     <property name="libs.restlib.javadoc" value="/usr/local/netbeans-7.1/enterprise/docs/jersey-1.8-javadoc.zip:/usr/local/netbeans-7.1/enterprise/docs/jersey-apache-client-1.8-javadoc.zip:/usr/local/netbeans-7.1/enterprise/docs/jersey-atom-abdera-1.8-javadoc.zip:/usr/local/netbeans-7.1/enterprise/docs/jersey-guice-1.8-javadoc.zip:/usr/local/netbeans-7.1/enterprise/docs/jersey-multipart-1.8-javadoc.zip:/usr/local/netbeans-7.1/enterprise/docs/jersey-simple-server-1.8-javadoc.zip:/usr/local/netbeans-7.1/enterprise/docs/jersey-spring-1.8-javadoc.zip:/usr/local/netbeans-7.1/enterprise/docs/oauth-client-1.8-javadoc.zip:/usr/local/netbeans-7.1/enterprise/docs/oauth-server-1.8-javadoc.zip:/usr/local/netbeans-7.1/enterprise/docs/oauth-signature-1.8-javadoc.zip" />
     <property name="libs.JAXB-ENDORSED.classpath" value="/usr/local/netbeans-7.1/ide/modules/ext/jaxb/api/jaxb-api.jar" />
     <property name="libs.eclipselink.classpath" value="/usr/local/netbeans-7.1/java/modules/ext/eclipselink/eclipselink-2.3.0.jar:/usr/local/netbeans-7.1/java/modules/ext/eclipselink/javax.persistence-2.0.jar:/usr/local/netbeans-7.1/java/modules/ext/eclipselink/org.eclipse.persistence.jpa.jpql_1.0.0.jar" />
-    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
     <property name="libs.beans-binding.javadoc" value="/usr/local/netbeans-7.1/java/docs/beansbinding-1.2.1-doc.zip" />
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
     <property name="java.vm.vendor" value="Sun Microsystems Inc." />
     <property name="libs.CopyLibs.classpath" value="/usr/local/netbeans-7.1/java/ant/extra/org-netbeans-modules-java-j2seproject-copylibstask.jar" />
     <property name="libs.spring-framework300.classpath" value="/usr/local/netbeans-7.1/ide/modules/org-apache-commons-logging.jar:/usr/local/netbeans-7.1/java/modules/ext/cglib-2.2.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-aop-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-asm-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-aspects-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-beans-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-context-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-context-support-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-core-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-expression-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-instrument-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-instrument-tomcat-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-jdbc-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-jms-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-orm-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-oxm-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-test-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-tx-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-web-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-webmvc-portlet-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-webmvc-3.0.6.RELEASE.jar:/usr/local/netbeans-7.1/java/modules/ext/spring-3.0/spring-struts-3.0.6.RELEASE.jar" />
@@ -443,23 +442,23 @@
     <property name="build.dir" value="build" />
     <property name="libs.jsp-compilation.classpath" value="/usr/local/netbeans-7.1/java/ant/lib/ant.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/servlet3.0-jsp2.2-api.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/glassfish-jspparser-3.0.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/jsf-2_1/jsf-api.jar:/usr/local/netbeans-7.1/enterprise/modules/ext/jstl.jar:/usr/local/netbeans-7.1/java/ant/lib/ant-launcher.jar" />
     <property name="ant.version" value="Apache Ant(TM) version 1.8.2 compiled on December 20 2010" />
-    <property name="build.classes.excludes" value="**/*.java,**/*.form" />
     <property name="file.encoding" value="UTF-8" />
-    <property name="jdkBug6558476" value="false" />
+    <property name="build.classes.excludes" value="**/*.java,**/*.form" />
     <property name="javadoc.nonavbar" value="false" />
+    <property name="jdkBug6558476" value="false" />
     <property name="platform.active" value="default_platform" />
   </properties>
-  <testcase classname="UI.GUI.GuiValiKommunikaatioTest" name="testKysyNext" time="0.0060" />
-  <testcase classname="UI.GUI.GuiValiKommunikaatioTest" name="testKysyEdellinen" time="0.0010" />
-  <testcase classname="UI.GUI.GuiValiKommunikaatioTest" name="testTarkastaVastaus" time="0.0" />
-  <testcase classname="UI.GUI.GuiValiKommunikaatioTest" name="testKysyRandom" time="0.0010" />
-  <testcase classname="UI.GUI.GuiValiKommunikaatioTest" name="testKysyLooginen" time="0.0010" />
-  <testcase classname="UI.GUI.GuiValiKommunikaatioTest" name="testTarkSana" time="0.0010" />
-  <testcase classname="UI.GUI.GuiValiKommunikaatioTest" name="testGetOikein" time="0.0" />
-  <testcase classname="UI.GUI.GuiValiKommunikaatioTest" name="testGetVaarin" time="0.0" />
-  <testcase classname="UI.GUI.GuiValiKommunikaatioTest" name="testGetYhteensa" time="0.0010" />
-  <testcase classname="UI.GUI.GuiValiKommunikaatioTest" name="testGetKysytty" time="0.0010" />
-  <testcase classname="UI.GUI.GuiValiKommunikaatioTest" name="testGetVastaus" time="0.0" />
+  <testcase classname="UI.GUI.ValiKommunikaatioTest" name="testKysyNext" time="0.0070" />
+  <testcase classname="UI.GUI.ValiKommunikaatioTest" name="testKysyEdellinen" time="0.0010" />
+  <testcase classname="UI.GUI.ValiKommunikaatioTest" name="testTarkastaVastaus" time="0.0010" />
+  <testcase classname="UI.GUI.ValiKommunikaatioTest" name="testKysyRandom" time="0.0" />
+  <testcase classname="UI.GUI.ValiKommunikaatioTest" name="testKysyLooginen" time="0.0" />
+  <testcase classname="UI.GUI.ValiKommunikaatioTest" name="testTarkSana" time="0.0010" />
+  <testcase classname="UI.GUI.ValiKommunikaatioTest" name="testGetOikein" time="0.0010" />
+  <testcase classname="UI.GUI.ValiKommunikaatioTest" name="testGetVaarin" time="0.0" />
+  <testcase classname="UI.GUI.ValiKommunikaatioTest" name="testGetYhteensa" time="0.0" />
+  <testcase classname="UI.GUI.ValiKommunikaatioTest" name="testGetKysytty" time="0.0010" />
+  <testcase classname="UI.GUI.ValiKommunikaatioTest" name="testGetVastaus" time="0.0" />
   <system-out><![CDATA[Sanat luettu!
 [
 Sana: sana || Vastine: vastine, 
@@ -467,7 +466,6 @@ Sana: tro || Vastine: ololooo]
 [
 Sana: sana || Vastine: vastine, 
 Sana: tro || Vastine: ololooo]
-Kyssuunta = true
 Sanat luettu!
 [
 Sana: sana || Vastine: vastine, 
@@ -475,7 +473,6 @@ Sana: jarmo || Vastine: jarmo2]
 [
 Sana: sana || Vastine: vastine, 
 Sana: jarmo || Vastine: jarmo2]
-Kyssuunta = true
 Sanat luettu!
 [
 Sana: sana || Vastine: vastine, 
@@ -483,7 +480,6 @@ Sana: jarmo || Vastine: jarmo2]
 [
 Sana: sana || Vastine: vastine, 
 Sana: jarmo || Vastine: jarmo2]
-Kyssuunta = true
 Sanat luettu!
 [
 Sana: sana || Vastine: vastine, 
@@ -491,7 +487,6 @@ Sana: jarmo || Vastine: jarmo2]
 [
 Sana: sana || Vastine: vastine, 
 Sana: jarmo || Vastine: jarmo2]
-Kyssuunta = true
 Sanat luettu!
 [
 Sana: sana || Vastine: vastine, 
@@ -499,7 +494,9 @@ Sana: jarmo || Vastine: jarmo2]
 [
 Sana: sana || Vastine: vastine, 
 Sana: jarmo || Vastine: jarmo2]
-Kyssuunta = true
+[
+Sana: sana || Vastine: vastine, 
+Sana: jarmo || Vastine: jarmo2]
 Sanat luettu!
 [
 Sana: sana || Vastine: vastine, 
@@ -507,7 +504,6 @@ Sana: jarmo || Vastine: jarmo2]
 [
 Sana: sana || Vastine: vastine, 
 Sana: jarmo || Vastine: jarmo2]
-Kyssuunta = true
 Sanat luettu!
 [
 Sana: sana || Vastine: vastine, 
@@ -515,7 +511,6 @@ Sana: jarmo || Vastine: jarmo2]
 [
 Sana: sana || Vastine: vastine, 
 Sana: jarmo || Vastine: jarmo2]
-Kyssuunta = true
 Sanat luettu!
 [
 Sana: sana || Vastine: vastine, 
@@ -523,7 +518,6 @@ Sana: jarmo || Vastine: jarmo2]
 [
 Sana: sana || Vastine: vastine, 
 Sana: jarmo || Vastine: jarmo2]
-Kyssuunta = true
 Sanat luettu!
 [
 Sana: sana || Vastine: vastine, 
@@ -531,7 +525,6 @@ Sana: jarmo || Vastine: jarmo2]
 [
 Sana: sana || Vastine: vastine, 
 Sana: jarmo || Vastine: jarmo2]
-Kyssuunta = true
 Sanat luettu!
 [
 Sana: sana || Vastine: vastine, 
@@ -539,7 +532,6 @@ Sana: jarmo || Vastine: jarmo2]
 [
 Sana: sana || Vastine: vastine, 
 Sana: jarmo || Vastine: jarmo2]
-Kyssuunta = true
 Sanat luettu!
 [
 Sana: sana || Vastine: vastine, 
@@ -547,7 +539,6 @@ Sana: jarmo || Vastine: jarmo2]
 [
 Sana: sana || Vastine: vastine, 
 Sana: jarmo || Vastine: jarmo2]
-Kyssuunta = true
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
