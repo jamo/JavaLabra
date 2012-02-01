@@ -52,7 +52,7 @@ param
         jScrollPane1.setViewportView(jTextArea1);
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
-        jLabel1.setText("Kyselyohjelma v 1.2");
+        jLabel1.setText("Kyselyohjelma v 1.2.7");
 
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

@@ -23,6 +23,7 @@ public class ValiKommunikaatio {
 
     /**
      * luodaan guiValiKommunikaatio, ja luetaan tiedoston
+     * @param GUI jos true, niin graafinen, jos false, niin tekstipohjainen kysymys
      */
     public ValiKommunikaatio(boolean GUI) {
         if (GUI) {

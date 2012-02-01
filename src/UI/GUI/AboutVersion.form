@@ -75,7 +75,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Ubuntu" size="36" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Kyselyohjelma v 1.2"/>
+        <Property name="text" type="java.lang.String" value="Kyselyohjelma v 1.2.7"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
