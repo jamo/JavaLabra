@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="linux" name="logiikka.SanatTaulukkoonTest" tests="2" time="0.065" timestamp="2012-02-02T12:47:27">
+<testsuite errors="0" failures="0" hostname="linux" name="logiikka.SanatTaulukkoonTest" tests="2" time="0.08" timestamp="2012-02-02T12:56:41">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -66,7 +66,7 @@
     <property name="manifest.available+main.class" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner logiikka.SanatTaulukkoonTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/jarmo/JavaLabra/build/test/results/TEST-logiikka.SanatTaulukkoonTest.xml crashfile=/home/jarmo/JavaLabra/build/junitvmwatcher472870774812815968.properties propsfile=/home/jarmo/JavaLabra/build/junit286221627787411672.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner logiikka.SanatTaulukkoonTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/jarmo/JavaLabra/build/test/results/TEST-logiikka.SanatTaulukkoonTest.xml crashfile=/home/jarmo/JavaLabra/build/junitvmwatcher9093128698524726634.properties propsfile=/home/jarmo/JavaLabra/build/junit1767105744292331490.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="jnlp.descriptor" value="application" />
@@ -449,8 +449,8 @@
     <property name="javadoc.nonavbar" value="false" />
     <property name="platform.active" value="default_platform" />
   </properties>
-  <testcase classname="logiikka.SanatTaulukkoonTest" name="sanatTaulukkoontest" time="0.0060" />
-  <testcase classname="logiikka.SanatTaulukkoonTest" name="sanatTaulukkoontest2" time="0.0" />
+  <testcase classname="logiikka.SanatTaulukkoonTest" name="sanatTaulukkoontest" time="0.0080" />
+  <testcase classname="logiikka.SanatTaulukkoonTest" name="sanatTaulukkoontest2" time="0.0010" />
   <system-out><![CDATA[Sanat luettu!
 Sanat luettu!
 ]]></system-out>
