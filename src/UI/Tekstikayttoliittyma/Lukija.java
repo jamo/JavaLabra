@@ -9,10 +9,8 @@ import java.util.Scanner;
  */
 public class Lukija {
 
-    Scanner l = new Scanner(System.in);
+    private Scanner kaytLukija = new Scanner(System.in);
 
-    public Lukija() {
-    }
 
     /**
      * Näytetään viesti ja kysytään String merkkijono.
@@ -23,7 +21,7 @@ public class Lukija {
      */
     public String kysyString(String viesti) {
         System.out.println(viesti);
-        return l.nextLine();
+        return getL().nextLine();
     }
 
     /**
@@ -36,7 +34,7 @@ public class Lukija {
     public int kysyInt(String viesti) {
         try {
             System.out.println(viesti);
-            return Integer.parseInt(l.nextLine());
+            return Integer.parseInt(getL().nextLine());
         } catch (Exception e) {
             return -1;
         }
@@ -57,6 +55,13 @@ public class Lukija {
      * @return palauttaa käyttäjän syöttämän tekstirivin.
      */
     public String kysyString() {
-        return l.nextLine();
+        return getL().nextLine();
+    }
+
+    /**
+     * @return palauttaa lukijan
+     */
+    public Scanner getL() {
+        return kaytLukija;
     }
 }

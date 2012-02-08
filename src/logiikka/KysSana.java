@@ -9,8 +9,15 @@ package logiikka;
  */
 public class KysSana implements Comparable<KysSana> {
 
-    private String eka, toka;
+    private String eka, toka;//päädytty, että tämä on yhä kuvaavin tapa eritellä sanat.
     private int vaarin = 0, oikein = 0;
+
+    /**
+     * Oletus konstruktori, joka on parametritön. Tarvitaan testejä varten. JA
+     * koska on kuormitettu on tänkin ihan hyvä olla.
+     */
+    public KysSana() {
+    }
 
     /**
      * Konstruktori, jolla parametrina sanapari. Tämä asettaa ne luokan private
@@ -23,14 +30,6 @@ public class KysSana implements Comparable<KysSana> {
         this.eka = eka;
         this.toka = toka;
     }
-    
-    /**
-     * tyhjä oletuskonstruktori.
-     */
-    public KysSana(){
-        
-        
-    }
 
     /**
      *
@@ -41,7 +40,7 @@ public class KysSana implements Comparable<KysSana> {
      * @return palauttaa true merkiksi onnistumisesta
      */
     public boolean setEka(String sana) {
-        eka = sana;
+        this.eka = sana;
         return true;
     }
 
@@ -54,7 +53,7 @@ public class KysSana implements Comparable<KysSana> {
      * @return palauttaa true merkiksi onnistumisesta
      */
     public boolean setToka(String sana) {
-        toka = sana;
+        this.toka = sana;
         return true;
     }
 
@@ -73,7 +72,7 @@ public class KysSana implements Comparable<KysSana> {
      * @return sanan vastineen String merkkijonona
      */
     public String getToka() {
-        return toka;
+        return this.toka;
     }
 
     /**
@@ -82,7 +81,7 @@ public class KysSana implements Comparable<KysSana> {
      * @return Palauttaa oikein menneiden kääeenösten arvon
      */
     public int getOikein() {
-        return oikein;
+        return this.oikein;
     }
 
     /**
@@ -91,7 +90,7 @@ public class KysSana implements Comparable<KysSana> {
      * @return palauttaa väärin menneiden käännösten arvon
      */
     public int getVaarin() {
-        return vaarin;
+        return this.vaarin;
     }
 
     /**
@@ -133,27 +132,22 @@ public class KysSana implements Comparable<KysSana> {
     public double painoArvo() {
         double v = this.getVaarin();
         double o = this.getOikein();
-//        double ka = 
         double painoArv = 5 * v + o;
-//                (10*v+1*o)*Math.log((o+v)/o);
         return painoArv;
     }
-//            = new HashMap<String, Integer>();
 
     /**
      * compareTo KysSana olioiden vertailun vuoksi
      *
-     * @param verrattavaComp verrattava ilmentymä
+     * @param verrattava verrattava ilmentymä
      *
      * @return palauttaa arvon , >0 jos this omaa suuremman painooarvon, 0 jos
      * sama ja <0 jos this omaa pienemmän painoarvon
      */
     @Override
-    public int compareTo(KysSana verrattavaComp) {
-        return (int) (this.painoArvo() - verrattavaComp.painoArvo());
+    public int compareTo(KysSana verrattava) {
+        return (int) (this.painoArvo() - verrattava.painoArvo());
 
-
-//        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
 //11:41:43 <@Jamo_> EKK: Paikalla?

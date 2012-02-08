@@ -10,28 +10,30 @@ import logiikka.ValitseTiedosto;
  */
 public class ValiKommunikaatio {
 
-    private ValitseTiedosto gl;
-    private KyselyLogiikka k;
+    private ValitseTiedosto valitseTiedosto;
+    private KyselyLogiikka kyselyLogiikka;
 
-//private KyselyLogiikka k;
-//
-    // konstruktori tekstikäytöliittymää varten
+    /**
+     * Luoka nkonstruktori, tämä laukaisee tiedoston lukemisen.
+     */
     public ValiKommunikaatio() {
-        logiikka.ValitseTiedosto l = new logiikka.ValitseTiedosto();
-        k = new KyselyLogiikka(l.lueTied());
+        logiikka.ValitseTiedosto tiedValitsin = new logiikka.ValitseTiedosto();
+        kyselyLogiikka = new KyselyLogiikka(tiedValitsin.lueTied());
     }
 
     /**
      * luodaan guiValiKommunikaatio, ja luetaan tiedoston
-     * @param GUI jos true, niin graafinen, jos false, niin tekstipohjainen kysymys
+     *
+     * @param GUI jos true, niin graafinen, jos false, niin tekstipohjainen
+     *            kysymys
      */
     public ValiKommunikaatio(boolean GUI) {
         if (GUI) {
-            gl = new ValitseTiedosto();
-            k = new KyselyLogiikka(gl.lueTiedostoGui());
+            valitseTiedosto = new ValitseTiedosto();
+            kyselyLogiikka = new KyselyLogiikka(valitseTiedosto.lueTiedostoGui());
         } else {
             logiikka.ValitseTiedosto l = new logiikka.ValitseTiedosto();
-            k = new KyselyLogiikka(l.lueTied());
+            kyselyLogiikka = new KyselyLogiikka(l.lueTied());
         }
     }
 
@@ -41,7 +43,7 @@ public class ValiKommunikaatio {
      * @param KyselyLogiikka Kyselylogiikka, testausta varten.
      */
     public ValiKommunikaatio(KyselyLogiikka KyselyLogiikka) {
-        k = KyselyLogiikka;
+        kyselyLogiikka = KyselyLogiikka;
 
     }
 
@@ -52,8 +54,8 @@ public class ValiKommunikaatio {
      *
      * @return palautetaan asetaKysymyksen antama kysyttävä sana.
      */
-    public String kysyNext(boolean kysSuunta) {
-        return k.asetaKysymys(k.getA(), kysSuunta, 1);
+    public String kysyNext(boolean kysymisSuunta) {
+        return kyselyLogiikka.asetaKysymys(kyselyLogiikka.getA(), kysymisSuunta, 1);
     }
 
     /**
@@ -64,54 +66,53 @@ public class ValiKommunikaatio {
      * @return palautetaan asetaKysymyksen antama kysyttävä sana.
      */
     public String kysyEdellinen(boolean kysSuunta) {
-        return k.asetaKysymys(k.getA(), kysSuunta, -1);
+        return kyselyLogiikka.asetaKysymys(kyselyLogiikka.getA(), kysSuunta, -1);
     }
 
     /**
      * Tarkistetaan menikö sana oikein
      *
-     * @param sana Tarkistettava sana
+     * @param vastaus Tarkistettava sana
      *
      * @return palautetaan true, jos vastaus oli oikein.
      */
-    public boolean tarkastaVastaus(String sana) {
-        return k.tarkistaVastaus(sana);
+    public boolean tarkastaVastaus(String vastaus) {
+        return kyselyLogiikka.tarkistaVastaus(vastaus);
     }
 
     /**
      * Kysytän random sana
      *
-     * @param kysSuunta true = sana -> vastine; false vastine -> sana
+     * @param kysymisSuunta true = sana -> vastine; false vastine -> sana
      *
      * @return palautetaan asetaKysymyksen antama kysyttävä sana.
      */
-    public String kysyRandom(boolean kysSuunta) {
-        return k.random(kysSuunta);
+    public String kysyRandom(boolean kysymisSuunta) {
+        return kyselyLogiikka.random(kysymisSuunta);
     }
 
     /**
      * Kysytän sana, joka on loogisesti oppimisen kannalta kannattava sana
      * kysyä.
      *
-     * @param kysSuunta true = sana -> vastine; false vastine -> sana
+     * @param kysymisSuunta true = sana -> vastine; false vastine -> sana
      *
      * @return palautetaan asetaKysymyksen antama kysyttävä sana.
      */
-    public String kysyLooginen(boolean kysSuunta) {
-        return k.alunPainotus(kysSuunta);
+    public String kysyLooginen(boolean kysymisSuunta) {
+        return kyselyLogiikka.alunPainotus(kysymisSuunta);
     }
-//TODO tässä 2 saman tekevää metodia!!!
 
-    /**
-     * Tarkistetaan menikö sana oikein
-     *
-     * @param sana Tarkistettava sana
-     *
-     * @return palautetaan true, jos vastaus oli oikein.
-     */
-    public boolean tarkSana(String sana) {
-        return k.tarkistaVastaus(sana);
-    }
+//    /**
+//     * Tarkistetaan menikö sana oikein
+//     *
+//     * @param vastaus Tarkistettava sana
+//     *
+//     * @return palautetaan true, jos vastaus oli oikein.
+//     */
+//    public boolean tarkSana(String vastaus) {
+//        return kyselyLogiikka.tarkistaVastaus(vastaus);
+//    }
 
     /**
      * Kertoo, moniko meni oikein
@@ -119,7 +120,7 @@ public class ValiKommunikaatio {
      * @return oikein menneiden lkm
      */
     public int getOikein() {
-        return k.getOikein();
+        return kyselyLogiikka.getOikein();
     }
 
     /**
@@ -128,25 +129,25 @@ public class ValiKommunikaatio {
      * @return väärinmenneiden lkn
      */
     public int getVaarin() {
-        return k.getVaarin();
+        return kyselyLogiikka.getVaarin();
     }
 
     /**
-     * Kertoo, montako tarkistusyritystä on
+     * Kertoo, montako tarkistusyritystä on ollut yhteensä.
      *
      * @return yhteensä arvattujen lkm
      */
     public int getYhteensa() {
-        return k.getYhteensa();
+        return kyselyLogiikka.getYhteensa();
     }
 
     /**
-     * palauttaa kysytyn sanan
+     * palauttaa kysytyn sanan, esim vastauksen näyttämistä varten.
      *
      * @return kysytty saha
      */
     public String getKysytty() {
-        return k.getKysyttavaSana();
+        return kyselyLogiikka.getKysyttavaSana();
     }
 
     /**
@@ -155,6 +156,6 @@ public class ValiKommunikaatio {
      * @return vastaus
      */
     public String getVastaus() {
-        return k.getVastaus();
+        return kyselyLogiikka.getVastaus();
     }
 }

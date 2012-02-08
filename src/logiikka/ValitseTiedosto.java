@@ -52,7 +52,7 @@ public class ValitseTiedosto {
                 String polku = jf.getName();
                 File valittu = jf.getSelectedFile();
                 if (valittu == null) {
-                    System.exit(0);
+                    System.exit(0); //cancelin painaminen loptettaa.
                 }
                 filunLukija = new Scanner(valittu);
                 return filunLukija;

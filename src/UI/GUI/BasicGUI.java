@@ -2,11 +2,15 @@ package UI.GUI;
 
 import UI.ValiKommunikaatio;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 
 /**
- * BasicGUI on luokka, jossa suurin osa graafisest akäyttöliittymästä on toteutettu.
- * Luokka hyödyntää kylelyogiikan komponentteja kysellessään sanoja ja vastineita käyttäjältä.
+ * BasicGUI on luokka, jossa suurin osa graafisest akäyttöliittymästä on
+ * toteutettu.
+ * Luokka hyödyntää kylelyogiikan komponentteja kysellessään sanoja ja
+ * vastineita käyttäjältä.
+ *
  * @author jarmo
  */
 public class BasicGUI extends javax.swing.JFrame {
@@ -35,6 +39,74 @@ public class BasicGUI extends javax.swing.JFrame {
         TarkVastaus.setEnabled(true);
     }
 
+    private void asetaKysymys(String kysyttavaSana){
+        Kysymys.setText("Anna sanan: " + kysyttavaSana + " vastine:");
+        Vastaus.setText("");
+        enableTarkista();
+        tyhjennaOnnistuminen();
+    }
+    
+    private void kysyNext() {
+        String kysyttavaSana = k.kysyNext(kysSuunta);
+//        Kysymys.setText("Anna sanan: " + kysyttavaSana + " vastine:");
+        asetaKysymys(kysyttavaSana);
+//        Vastaus.setText("");
+//        tyhjennaOnnistuminen();
+//        enableTarkista();
+        NaytVastaus.setEnabled(false);
+    }
+    
+    public void kysyPrev(){
+        String kysyttavaSana = k.kysyEdellinen(kysSuunta);
+//        Kysymys.setText("Anna sanan: " + kysyttavaSana + " vastine:");
+        asetaKysymys(kysyttavaSana);
+//        Vastaus.setText("");
+//        tyhjennaOnnistuminen();
+//        enableTarkista();
+        NaytVastaus.setEnabled(false);
+    }
+
+    private void kysyRandom(){
+        String kysyttava = k.kysyRandom(kysSuunta);
+//        Kysymys.setText("Anna sanan: " + kysyttava + " vastine:");
+        asetaKysymys(kysyttava);
+//        Vastaus.setText("");
+        tyhjennaOnnistuminen();
+//        enableTarkista();
+//        NaytVastaus.setEnabled(false);
+        
+    }
+    
+    private void kysyLooginen(){
+        String kysyttava = k.kysyLooginen(kysSuunta);
+//        Kysymys.setText("Anna sanan: " + kysyttava + " vastine:");
+        asetaKysymys(kysyttava);
+//        Vastaus.setText("");
+        enableTarkista();
+//        tyhjennaOnnistuminen();
+//        NaytVastaus.setEnabled(false);
+        
+    }
+    
+    private void tarkVastaus(){
+        tyhjennaOnnistuminen();
+        String vastaus = Vastaus.getText();
+        boolean onnistui = k.tarkastaVastaus(vastaus);
+        Onnistuneet.setText("Oikein: " + k.getOikein());
+        Vaarin.setText("Väärin: " + k.getVaarin());
+        Yhteensa.setText("Yhteensä: " + k.getYhteensa());
+        disableTarkista();
+        NaytVastaus.setEnabled(true);
+        if (onnistui) {
+            MitenMeni.setText("Oikein");
+            MitenMeni.setForeground(Color.GREEN);
+        }
+        if (!onnistui) {
+            MitenMeni.setText("Väärin");
+            MitenMeni.setForeground(Color.RED);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to
      * initialize the form.
@@ -64,6 +136,8 @@ public class BasicGUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         MenuValikko = new javax.swing.JMenuBar();
         FileMenu = new javax.swing.JMenu();
+        SuljeTaaIkkuna = new javax.swing.JMenuItem();
+        AvaaUusiFilu = new javax.swing.JMenuItem();
         LopetaMenuItem = new javax.swing.JMenuItem();
         HelpMenu = new javax.swing.JMenu();
         AboutMenuitem2 = new javax.swing.JMenuItem();
@@ -74,6 +148,11 @@ public class BasicGUI extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(600, 400));
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                formKeyTyped(evt);
+            }
+        });
 
         SuunnanValitsin.add(Vastineeseen);
         Vastineeseen.setSelected(true);
@@ -104,6 +183,11 @@ public class BasicGUI extends javax.swing.JFrame {
         KysSeuraava.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 KysSeuraavaActionPerformed(evt);
+            }
+        });
+        KysSeuraava.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                KysSeuraavaKeyTyped(evt);
             }
         });
 
@@ -159,6 +243,25 @@ public class BasicGUI extends javax.swing.JFrame {
 
         FileMenu.setText("File");
 
+        SuljeTaaIkkuna.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        SuljeTaaIkkuna.setText("Sulje tämä ikkuna");
+        SuljeTaaIkkuna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SuljeTaaIkkunaActionPerformed(evt);
+            }
+        });
+        FileMenu.add(SuljeTaaIkkuna);
+
+        AvaaUusiFilu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        AvaaUusiFilu.setText("Avaa uusi tiedosto");
+        AvaaUusiFilu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AvaaUusiFiluActionPerformed(evt);
+            }
+        });
+        FileMenu.add(AvaaUusiFilu);
+
+        LopetaMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
         LopetaMenuItem.setText("Quit");
         LopetaMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -296,129 +399,194 @@ public class BasicGUI extends javax.swing.JFrame {
     private void KysSeuraavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KysSeuraavaActionPerformed
         //Eli tähän se, mitä seuraavan sanan kysymiseen vaaditaan
 //       kysyttavaSana
-        String kysyttavaSana = k.kysyNext(kysSuunta);
-        Kysymys.setText("Anna sanan: " + kysyttavaSana + " vastine:");
-        Vastaus.setText("");
-        tyhjennaOnnistuminen();
-        enableTarkista();
-        NaytVastaus.setEnabled(false);
+//        String kysyttavaSana = k.kysyNext(kysSuunta);
+//        Kysymys.setText("Anna sanan: " + kysyttavaSana + " vastine:");
+//        Vastaus.setText("");
+//        tyhjennaOnnistuminen();
+//        enableTarkista();
+//        NaytVastaus.setEnabled(false);'
+        kysyNext();
     }//GEN-LAST:event_KysSeuraavaActionPerformed
 
     private void KysEdellinenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KysEdellinenActionPerformed
-        String kysyttavaSana = k.kysyEdellinen(kysSuunta);
-        Kysymys.setText("Anna sanan: " + kysyttavaSana + " vastine:");
-        Vastaus.setText("");
-        tyhjennaOnnistuminen();
-        enableTarkista();
-        NaytVastaus.setEnabled(false);
+//        String kysyttavaSana = k.kysyEdellinen(kysSuunta);
+//        Kysymys.setText("Anna sanan: " + kysyttavaSana + " vastine:");
+//        Vastaus.setText("");
+//        tyhjennaOnnistuminen();
+//        enableTarkista();
+//        NaytVastaus.setEnabled(false);
+        kysyPrev();
     }//GEN-LAST:event_KysEdellinenActionPerformed
 
     private void RandomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RandomActionPerformed
-        // TODO add your handling code here:
-        String kysyttava = k.kysyRandom(kysSuunta);
-        Kysymys.setText("Anna sanan: " + kysyttava + " vastine:");
-        Vastaus.setText("");
-        tyhjennaOnnistuminen();
-        enableTarkista();
-        NaytVastaus.setEnabled(false);
+
+//        String kysyttava = k.kysyRandom(kysSuunta);
+//        Kysymys.setText("Anna sanan: " + kysyttava + " vastine:");
+//        Vastaus.setText("");
+//        tyhjennaOnnistuminen();
+//        enableTarkista();
+//        NaytVastaus.setEnabled(false);
         //tämä kutsuu sitä kuuluisaa Randomia
+        kysyRandom();
     }//GEN-LAST:event_RandomActionPerformed
 
     private void LogiikkaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogiikkaActionPerformed
-        // TODO add your handling code here:
-        String kysyttava = k.kysyLooginen(kysSuunta);
-        Kysymys.setText("Anna sanan: " + kysyttava + " vastine:");
-        Vastaus.setText("");
-        enableTarkista();
-        tyhjennaOnnistuminen();
-        NaytVastaus.setEnabled(false);
+
+//        String kysyttava = k.kysyLooginen(kysSuunta);
+//        Kysymys.setText("Anna sanan: " + kysyttava + " vastine:");
+//        Vastaus.setText("");
+//        enableTarkista();
+//        tyhjennaOnnistuminen();
+//        NaytVastaus.setEnabled(false);
+        kysyLooginen();
         //tänne loogisen kyselyn vaatimat kyselyt
     }//GEN-LAST:event_LogiikkaActionPerformed
 
+    /**
+     * Tarkastaa vastauksen
+     *
+     * @param evt tapahtuma
+     */
     private void TarkVastausActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TarkVastausActionPerformed
-        // TODO add your handling code here:
-        tyhjennaOnnistuminen();
-        String vastaus = Vastaus.getText();
-        boolean onnistui = k.tarkSana(vastaus);
-        Onnistuneet.setText("Oikein: " + k.getOikein());
-        Vaarin.setText("Väärin: " + k.getVaarin());
-        Yhteensa.setText("Yhteensä: " + k.getYhteensa());
-        disableTarkista();
-        NaytVastaus.setEnabled(true);
-        if (onnistui) {
-            MitenMeni.setText("Oikein");
-            MitenMeni.setForeground(Color.GREEN);
-        }
-        if (!onnistui) {
-            MitenMeni.setText("Väärin");
-            MitenMeni.setForeground(Color.RED);
-        }
+
+//        tyhjennaOnnistuminen();
+//        String vastaus = Vastaus.getText();
+//        boolean onnistui = k.tarkastaVastaus(vastaus);
+//        Onnistuneet.setText("Oikein: " + k.getOikein());
+//        Vaarin.setText("Väärin: " + k.getVaarin());
+//        Yhteensa.setText("Yhteensä: " + k.getYhteensa());
+//        disableTarkista();
+//        NaytVastaus.setEnabled(true);
+//        if (onnistui) {
+//            MitenMeni.setText("Oikein");
+//            MitenMeni.setForeground(Color.GREEN);
+//        }
+//        if (!onnistui) {
+//            MitenMeni.setText("Väärin");
+//            MitenMeni.setForeground(Color.RED);
+//        }
+        tarkVastaus();
     }//GEN-LAST:event_TarkVastausActionPerformed
 
+    /**
+     * Lopettaa ohjelman suorittamisen
+     *
+     * @param evt tapahtuma
+     */
     private void LopetaMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LopetaMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_LopetaMenuItemActionPerformed
 
+    /**
+     * Näytä about version ikkuna
+     *
+     * @param evt tapahtuma
+     */
     private void AboutMenuitem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutMenuitem2ActionPerformed
         new AboutVersion().setVisible(true);
     }//GEN-LAST:event_AboutMenuitem2ActionPerformed
 
+    /**
+     * Avaa copyright näkymä
+     *
+     * @param evt tapahtuma
+     */
     private void CopyrightInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CopyrightInfoActionPerformed
         // TODO add your handling code here:
 
         new Copyright().setVisible(true);
     }//GEN-LAST:event_CopyrightInfoActionPerformed
 
+    /**
+     * Näyttää vastauksen
+     *
+     * @param evt tapahtuma
+     */
     private void NaytVastausActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NaytVastausActionPerformed
-        JOptionPane.showMessageDialog(null, "Sanan: \"" + k.getKysytty() + "\" vastine on : \""+ k.getVastaus()+ "\"");
+        JOptionPane.showMessageDialog(null, "Sanan: \"" + k.getKysytty() + "\" vastine on : \"" + k.getVastaus() + "\"");
     }//GEN-LAST:event_NaytVastausActionPerformed
 
     /**
-     * @param args the command line arguments
+     * Avataan uusi tiedosto ja siten uusi ilmentymä tästä sovelluksesta
+     *
+     * @param evt tapahtuma
      */
-    public static void main(String args[]) {
-        /*
-         * Set the Nimbus look and feel
-         */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /*
-         * If Nimbus (introduced in Java SE 6) is not available, stay with the
-         * default look and feel.
-         * For details see
-         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BasicGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BasicGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BasicGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BasicGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-//        uk = new UiKommunikaatio(, null)
-        //</editor-fold>
+    private void AvaaUusiFiluActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvaaUusiFiluActionPerformed
 
-        /*
-         * Create and display the form
-         */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        new BasicGUI().setVisible(true);
+        //eli sulkee tän ikkunan, avaa uuden tiedostokyselyn ja avaa guin uudestaan
 
-            public void run() {
-                new BasicGUI().setVisible(true);
+    }//GEN-LAST:event_AvaaUusiFiluActionPerformed
 
-            }
-        });
-    }
+    /**
+     * Suljetaan tämä auki oleva ikkuna, jossa tätä klikataan.
+     *
+     * @param evt tapahtuma joka tapahtui
+     */
+    private void SuljeTaaIkkunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuljeTaaIkkunaActionPerformed
+
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_SuljeTaaIkkunaActionPerformed
+
+    private void KysSeuraavaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KysSeuraavaKeyTyped
+        // TODO add your handling code here:
+//        System.out.println(evt);
+    }//GEN-LAST:event_KysSeuraavaKeyTyped
+
+    private void formKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyTyped
+        // TODO add your handling code here:
+        //n = next
+        //p = prev
+        //c = tarkista
+        //l =looginen
+        //r = random
+        
+        //Ei toimi...
+//        if (evt.toString().contains("keyChar='n")) {
+//            System.out.println("Painettiin N");
+//            kysyNext();
+//        } else if (evt.toString().contains("keyChar='p")){
+//            System.out.println("Painettiin p");
+//            kysyPrev();
+//        } else if (evt.toString().contains("keyChar='t")){
+//            System.out.println("Painettiin t");
+//            tarkVastaus();
+//        } else if (evt.toString().contains("keyChar='r")){
+//            System.out.println("Painettiin r");
+//            kysyRandom();
+//        } else if (evt.toString().contains("keyChar='l")){
+//            System.out.println("Painettiin l");
+//            kysyLooginen();
+//        } 
+
+    }//GEN-LAST:event_formKeyTyped
+//
+////    /**
+////     * @param args the command line arguments
+////     */
+////    public static void main(String args[]) {
+////        /*
+////         * Set the Nimbus look and feel
+////         */
+////        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /*
+//     C     //</editor-fold>
+//
+////        /*
+////         * Create and display the form
+////         */
+////        java.awt.EventQueue.invokeLater(new Runnable() {
+////
+////            public void run() {
+////                new BasicGUI().setVisible(true);
+////
+////            }
+////        });
+////    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AboutMenuitem2;
+    private javax.swing.JMenuItem AvaaUusiFilu;
     private javax.swing.JMenuItem CopyrightInfo;
     private javax.swing.JMenu FileMenu;
     private javax.swing.JMenu HelpMenu;
@@ -434,6 +602,7 @@ public class BasicGUI extends javax.swing.JFrame {
     private javax.swing.JLabel Onnistuneet;
     private javax.swing.JButton Random;
     private javax.swing.JRadioButton Sanaan;
+    private javax.swing.JMenuItem SuljeTaaIkkuna;
     private javax.swing.ButtonGroup SuunnanValitsin;
     private javax.swing.JButton TarkVastaus;
     private javax.swing.JLabel Vaarin;

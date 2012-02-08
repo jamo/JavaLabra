@@ -236,8 +236,14 @@ public class KyselyLogiikka {
      */
     private void jarjestaVirheidenMukaan() {
 //        virheidenMukJarjLista = getA()
+        virheidenMukJarjLista = new ArrayList<KysSana>();
+        for (int i = 0; i <kyselyLista.size() ; i++) {
+            virheidenMukJarjLista.add(kyselyLista.get(i));
+        }
+        
         System.out.println(virheidenMukJarjLista);;
         Collections.sort(virheidenMukJarjLista);
+        System.out.println(virheidenMukJarjLista);
     }
 
     /**
@@ -257,10 +263,10 @@ public class KyselyLogiikka {
         int koko = kyselyLista.size();
         int raja = 0;
         double randomi = r.nextDouble() * koko + 1;
-        for (int i = 0; i < virheidenMukJarjLista.size(); i++) {
+        loop: for (int i = 0; i < virheidenMukJarjLista.size(); i++) {
             if (virheidenMukJarjLista.get(i).painoArvo() < 0) {
                 raja = i;
-                i = virheidenMukJarjLista.size();
+                break loop;
             }
         }
         if (raja <= 0 && virheidenMukJarjLista.size() > 1) {
@@ -275,12 +281,10 @@ public class KyselyLogiikka {
 
             kohta = r.nextInt(raja);
             return asetaKysymys(virheidenMukJarjLista, suunta, 0);
-//            return kysy(r.nextInt(raja + 1), suunta, 1);
             //eli nyt tänne kyselemään väärin menneitä;
         } else {
             kohta = r.nextInt(virheidenMukJarjLista.size());
             return asetaKysymys(virheidenMukJarjLista, suunta, 0);
-//            return kysy(r.nextInt(jarstettyV.size()), suunta, 1);
             //eli tänne kyselemään oikeinmenneitä
         }
 
