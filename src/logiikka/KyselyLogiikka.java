@@ -97,12 +97,10 @@ public class KyselyLogiikka {
         }
         //aloitetaan kysyminen
         if (kysySuunta) {
-//            System.out.println("Kyssuunta = true");
             kysyttySana = kysyttavatSanat.get(kohta).getEka();
             kysytynSananVastine = kysyttavatSanat.get(kohta).getToka();
             return kysyttySana;
         } else {
-//            System.out.println("Kysssuunta = false");
             kysyttySana = kysyttavatSanat.get(kohta).getToka();
             kysytynSananVastine = kysyttavatSanat.get(kohta).getEka();
             return kysyttySana;

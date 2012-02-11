@@ -339,7 +339,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="NaytVastaus">
       <Properties>
-        <Property name="text" type="java.lang.String" value="N&#xe4;yt&#xe4;Vastaus"/>
+        <Property name="text" type="java.lang.String" value="N&#xe4;yt&#xe4; Vastaus"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>

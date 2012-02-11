@@ -231,7 +231,7 @@ public class BasicGUI extends javax.swing.JFrame {
 
         MitenMeni.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
 
-        NaytVastaus.setText("NäytäVastaus");
+        NaytVastaus.setText("Näytä Vastaus");
         NaytVastaus.setEnabled(false);
         NaytVastaus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -409,37 +409,16 @@ public class BasicGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_KysSeuraavaActionPerformed
 
     private void KysEdellinenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KysEdellinenActionPerformed
-//        String kysyttavaSana = k.kysyEdellinen(kysSuunta);
-//        Kysymys.setText("Anna sanan: " + kysyttavaSana + " vastine:");
-//        Vastaus.setText("");
-//        tyhjennaOnnistuminen();
-//        enableTarkista();
-//        NaytVastaus.setEnabled(false);
         kysyPrev();
     }//GEN-LAST:event_KysEdellinenActionPerformed
 
     private void RandomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RandomActionPerformed
-
-//        String kysyttava = k.kysyRandom(kysSuunta);
-//        Kysymys.setText("Anna sanan: " + kysyttava + " vastine:");
-//        Vastaus.setText("");
-//        tyhjennaOnnistuminen();
-//        enableTarkista();
-//        NaytVastaus.setEnabled(false);
-        //tämä kutsuu sitä kuuluisaa Randomia
         kysyRandom();
     }//GEN-LAST:event_RandomActionPerformed
 
     private void LogiikkaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogiikkaActionPerformed
-
-//        String kysyttava = k.kysyLooginen(kysSuunta);
-//        Kysymys.setText("Anna sanan: " + kysyttava + " vastine:");
-//        Vastaus.setText("");
-//        enableTarkista();
-//        tyhjennaOnnistuminen();
-//        NaytVastaus.setEnabled(false);
         kysyLooginen();
-        //tänne loogisen kyselyn vaatimat kyselyt
+
     }//GEN-LAST:event_LogiikkaActionPerformed
 
     /**
@@ -448,23 +427,6 @@ public class BasicGUI extends javax.swing.JFrame {
      * @param evt tapahtuma
      */
     private void TarkVastausActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TarkVastausActionPerformed
-
-//        tyhjennaOnnistuminen();
-//        String vastaus = Vastaus.getText();
-//        boolean onnistui = k.tarkastaVastaus(vastaus);
-//        Onnistuneet.setText("Oikein: " + k.getOikein());
-//        Vaarin.setText("Väärin: " + k.getVaarin());
-//        Yhteensa.setText("Yhteensä: " + k.getYhteensa());
-//        disableTarkista();
-//        NaytVastaus.setEnabled(true);
-//        if (onnistui) {
-//            MitenMeni.setText("Oikein");
-//            MitenMeni.setForeground(Color.GREEN);
-//        }
-//        if (!onnistui) {
-//            MitenMeni.setText("Väärin");
-//            MitenMeni.setForeground(Color.RED);
-//        }
         tarkVastaus();
     }//GEN-LAST:event_TarkVastausActionPerformed
 
@@ -535,31 +497,6 @@ public class BasicGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_KysSeuraavaKeyTyped
 
     private void formKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyTyped
-        // TODO add your handling code here:
-        //n = next
-        //p = prev
-        //c = tarkista
-        //l =looginen
-        //r = random
-        
-        //Ei toimi...
-//        if (evt.toString().contains("keyChar='n")) {
-//            System.out.println("Painettiin N");
-//            kysyNext();
-//        } else if (evt.toString().contains("keyChar='p")){
-//            System.out.println("Painettiin p");
-//            kysyPrev();
-//        } else if (evt.toString().contains("keyChar='t")){
-//            System.out.println("Painettiin t");
-//            tarkVastaus();
-//        } else if (evt.toString().contains("keyChar='r")){
-//            System.out.println("Painettiin r");
-//            kysyRandom();
-//        } else if (evt.toString().contains("keyChar='l")){
-//            System.out.println("Painettiin l");
-//            kysyLooginen();
-//        } 
-
     }//GEN-LAST:event_formKeyTyped
 //
 ////    /**
