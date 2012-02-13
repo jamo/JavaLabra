@@ -1,6 +1,0 @@
-Rakenteen kuvaus:
-
-Ohjelma koostuu useasta luokasta, jotka ovat luokiteltu toiminnallisuudensa mukaan eri pakkauksiin. 
-
-Sovelluksen käynnistymistä kuvaa hyvin uusin luomani Sekvenssikaavio, 1_2_2012_Sekvenssikaavio_GUInLuonti.png, jossa luodaan useita olioita, jotka pyytävät käyttäjää syöttämään tiedoston ja avaavat kyselyohjelman graafisen käyttöliittymän.
-
