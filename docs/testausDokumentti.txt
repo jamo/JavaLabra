@@ -1,0 +1,7 @@
+Testitapauksia:
+
+Testejä on jokaiselle logiikan luokalle toteutettu. Millään testerillä ei ole tarkasteltu testien kattavuutta, mutta kattavuus on suuri, sillä metodit eivät kovinkaan usein haaraudu, vaan ne ovat erittäin lyhyitä.
+
+Olen kokeillut muutamalla isommallakin tekstitiedostolla kyselyjä, ja ongelmia ei ilmennyt (500 riviä). Ohjelman luonteen vuoksi noinkin  suuret syötteet eivät ole odotettavia.
+
+Tietenkään GUI luokkia ei testata JUnit testeillä tai vastaavilla, mutta niissä logiikkaa ei juurikaan ole. Olen kuitenkin pyrkinyt kokeilemaan kaiken toimivuuden guissa.

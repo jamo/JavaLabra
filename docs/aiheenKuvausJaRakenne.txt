@@ -1,0 +1,35 @@
+Rakenteen kuvaus:
+
+Ohjelma koostuu useasta luokasta, jotka ovat luokiteltu toiminnallisuudensa mukaan eri pakkauksiin. 
+
+Sovelluksen käynnistymistä kuvaa hyvin uusin luomani Sekvenssikaavio, 1_2_2012_Sekvenssikaavio_GUInLuonti.png, jossa luodaan useita olioita, jotka pyytävät käyttäjää syöttämään tiedoston ja avaavat kyselyohjelman graafisen käyttöliittymän. Kuitenkin tiedoston luku on kuvattu vasta seuraavassa sekvenssikaaviossa.
+
+Sovelluksen kyselyn logiikkaa puolestaan kuvaa sekvenssikaavio 1_2_2012_SekvenssiKaavio_TiedostonLukuJaKysyNextJaTarkistaVastaus.png Tämä sisältää tiedon, miten seuraavan kysyminen tapahtuu, ja kuinka kysymys asetetan ja vastaus tarkistetaan. 
+
+Eli siis Main kutsuu luokkaa BasicGUI aikaansaaden reaktion, jossa syntyy ValiKomunikaatio Kyselylogiikalle, Tiedostonvalinta ikkuna, jolla tiedosto valitaann. Lissäksi kyselylogiikka syntyy. Kun tiedosto on luettu aukeaa GUI, jossa sanoja voi kysellä. 
+
+Kun GUIssa käyttäjä painaa esimerkiksi Kysy Seuraava -painiketta, niin selvittää ValiKommunikaatio Kyselylogiikka oliolta kysyttävän sanan. Kyselylogiikka lukee sanan KysSana luokasta, jossa kysyttävät sanaparit sijaitsevat.
+Käyttäjä syöttää vastauksen vastauskennttään ja painaessaan Tarkista, antaa GUI ValiKommunikaatiolle käyttäjän syötteen tarkastettavaksi. Käyttäjän syötettä verrataan Kyselylogiikassa tiedossa olevaan kysytyn sanan vastineeseen. Käyttäjä saa tiedon vastauksensa oikeellisuudesta.
+
+
+
+Aihe : toistonharjoittelua / kysely sovellus
+
+
+Toteutetaan sovellus, joka lukee sanoja tiedostosta ja kyselee niitä käyttäjältä. Sovellus tietää, mitkä sanat käyttäjä on osannut, ja missä on tapahtunut virheitä. 
+Järjestelmä tukee vain sanaparien kyselyä, eli kahta samaa merkitystä ei sanalle hyväksytä.
+
+Käyttäjät: kyselyohjelmaan käyttäjä
+
+Sovelluksessa on seuraavat toiminnallisudet käyttäjälle
+
+- valitsee tiedoston, josta sanat luetaan ohjelman omaan rakenteeseen.
+- valitsee suunnan jossa sanoja kysellään
+- valitsee tavan jolla sanoja kysellään (kysyy seuraava sana, kysy edelinen sana, kysy satunnainen sana, kysy loogisesti kannattava sana eli  kysy painottaen niitä sanoja, joita käyttäjä ei vielä osaa)
+- antaa vastauksen
+- tarkistaa menikö sana oikein
+- pyytää näyttämään vastauksen
+
+
+Jos kahdessa edellisessä mennään listan loppuun tai alkuun, siirrytään listan toiseen päähän, eli listaa voidaan kysellä loputtomasti
+

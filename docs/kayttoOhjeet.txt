@@ -1,0 +1,7 @@
+Käyttöohjeet
+
+Ohjelma auetessaan pyytää syöttämään tiedoston, joka halutaan luettavan, ja jonka sanoista kysely koostuu.
+Tämän jälkeen aukeaa ikkuna, jossa käyttäjä voi kysellä sanoja eri tavoilla. Lisäksi sanojen kysymis suunnan voi valita; sanasta vastineeseen ja vastineesta sanaan). Kirjainten  koolla on vaikutusta.
+Voit avata toisen kyselyikkunan vanhan rinnalle valitsemalla |File|Avaa uusi tiedosto|
+Kyseisen ikkunan voit sulkea |File|Slje tämä ikkuna| ja kaikki ikkunat joko |File|Quit| tai ruksista.
+
