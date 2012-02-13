@@ -12,6 +12,7 @@ Kun GUIssa käyttäjä painaa esimerkiksi Kysy Seuraava -painiketta, niin selvit
 Käyttäjä syöttää vastauksen vastauskennttään ja painaessaan Tarkista, antaa GUI ValiKommunikaatiolle käyttäjän syötteen tarkastettavaksi. Käyttäjän syötettä verrataan Kyselylogiikassa tiedossa olevaan kysytyn sanan vastineeseen. Käyttäjä saa tiedon vastauksensa oikeellisuudesta.
 
 
+#######################################################
 
 Aihe : toistonharjoittelua / kysely sovellus
 
