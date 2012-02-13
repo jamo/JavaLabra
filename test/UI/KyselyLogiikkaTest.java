@@ -116,6 +116,21 @@ public class KyselyLogiikkaTest {
         assertEquals("Sanan tarkastus ei toimi", true, k.tarkistaVastaus("vastine"));
     }
 
+    @Test
+    public void testTarkistaVastaus2() {
+        Scanner l;
+        ByteArrayInputStream bais = new ByteArrayInputStream("sana\nvastinee\n".getBytes());
+        l = new Scanner(bais);
+        KyselyLogiikka k = new KyselyLogiikka(l);
+        ArrayList<KysSana> a = new ArrayList<KysSana>();
+        a.add(new KysSana("sana", "vastinee"));
+
+        k.asetaKysymys(a, true, 1);
+
+
+        assertEquals("Sanan tarkastus ei toimi", true, k.tarkistaVastaus("vastinee"));
+    }
+
     /**
      * Test of random method, of class KyselyLogiikka.
      */
@@ -131,7 +146,22 @@ public class KyselyLogiikkaTest {
         String kysymys = k.random(true);
 
 
-        assertEquals("Randm ei kysy sanaa", "sana", kysymys);
+        assertEquals("Random ei kysy sanaa", "sana", kysymys);
+    }
+
+    @Test
+    public void testRandom2() {
+        Scanner l;
+        ByteArrayInputStream bais = new ByteArrayInputStream("sana\nvastine\nsana\nvastine\n".getBytes());
+        l = new Scanner(bais);
+        KyselyLogiikka k = new KyselyLogiikka(l);
+        ArrayList<KysSana> a = new ArrayList<KysSana>();
+        a.add(new KysSana("sana", "vastine"));
+
+        String kysymys = k.random(true);
+
+
+        assertEquals("Random ei kysy sanaa", "sana", kysymys);
     }
 
     /**
@@ -172,11 +202,30 @@ public class KyselyLogiikkaTest {
         assertEquals("Väärin menneiden tarkistusten lasku ei toimi", 2, virheita);
     }
 
+    @Test
+    public void testGetVaarin2() {
+        Scanner l;
+        ByteArrayInputStream bais = new ByteArrayInputStream("sana\nvastine\n".getBytes());
+        l = new Scanner(bais);
+        KyselyLogiikka k = new KyselyLogiikka(l);
+        ArrayList<KysSana> a = new ArrayList<KysSana>();
+        a.add(new KysSana("sana", "vastine"));
+
+        k.asetaKysymys(a, true, 1);
+        k.tarkistaVastaus("vaarav vastaus");
+        for (int i = 0; i < 1000; i++) {
+            k.tarkistaVastaus("trololololoo");
+        }
+        int virheita = k.getVaarin();
+
+        assertEquals("Väärin menneiden tarkistusten lasku ei toimi", 1001, virheita);
+    }
+
     /**
      * Test of getOikein method, of class KyselyLogiikka.
      */
     @Test
-    public void testGetOikein() {
+    public void testGetOikein1() {
         Scanner l;
         ByteArrayInputStream bais = new ByteArrayInputStream("sana\nvastine\n".getBytes());
         l = new Scanner(bais);
@@ -191,6 +240,26 @@ public class KyselyLogiikkaTest {
 //        System.out.println(virheita);
 
         assertEquals("Oikein menneiden sanojen tarkastukset ei laske virheitä oikein", 1, virheita);
+    }
+
+    @Test
+    public void testGetOikein2() {
+        Scanner l;
+        ByteArrayInputStream bais = new ByteArrayInputStream("sana\nvastine\n".getBytes());
+        l = new Scanner(bais);
+        KyselyLogiikka k = new KyselyLogiikka(l);
+        ArrayList<KysSana> a = new ArrayList<KysSana>();
+        a.add(new KysSana("sana", "vastine"));
+
+        k.asetaKysymys(a, true, 1);
+        for (int i = 0; i < 1000; i++) {
+            k.tarkistaVastaus("vastine");
+            k.tarkistaVastaus("vastine");
+        }
+        int virheita = k.getOikein();
+//        System.out.println(virheita);
+
+        assertEquals("Oikein menneiden sanojen tarkastukset ei laske virheitä oikein", 2000, virheita);
     }
 
     /**
@@ -213,6 +282,25 @@ public class KyselyLogiikkaTest {
         assertEquals("Sanan tarkastus ei toimi", 2, virheita);
     }
 
+    @Test
+    public void testGetYhteensa2() {
+        Scanner l;
+        ByteArrayInputStream bais = new ByteArrayInputStream("sana\nvastine\n".getBytes());
+        l = new Scanner(bais);
+        KyselyLogiikka k = new KyselyLogiikka(l);
+        ArrayList<KysSana> a = new ArrayList<KysSana>();
+        a.add(new KysSana("sana", "vastine"));
+
+        k.asetaKysymys(a, true, 1);
+        for (int i = 0; i < 500; i++) {
+            k.tarkistaVastaus("vaarav vastaus");
+            k.tarkistaVastaus("trololololoo");
+        }
+        int virheita = k.getYhteensa();
+
+        assertEquals("Sanan tarkastus ei toimi", 1000, virheita);
+    }
+
     /**
      * Test of getA method, of class KyselyLogiikka.
      */
@@ -226,7 +314,45 @@ public class KyselyLogiikkaTest {
         a.add(new KysSana("sana", "vastine"));
 
         k.asetaKysymys(a, true, 1);
-        ArrayList<KysSana>  ar = k.getA();
+        ArrayList<KysSana> ar = k.getA();
+        ar.toString().equals(a.toString());
+        assertEquals("Sanan tarkastus ei toimi", true, ar.toString().equals(a.toString()));
+    }
+    
+     @Test
+    public void testGetA2() {
+        Scanner l;
+        ByteArrayInputStream bais = new ByteArrayInputStream("sanaa\nvastine\n".getBytes());
+        l = new Scanner(bais);
+        KyselyLogiikka k = new KyselyLogiikka(l);
+        ArrayList<KysSana> a = new ArrayList<KysSana>();
+        a.add(new KysSana("sanaa", "vastine"));
+
+        k.asetaKysymys(a, true, 1);
+        ArrayList<KysSana> ar = k.getA();
+        ar.toString().equals(a.toString());
+        assertEquals("Sanan tarkastus ei toimi", true, ar.toString().equals(a.toString()));
+    }
+     
+     @Test
+    public void testGetAIsollaSyotteella() {
+         StringBuilder sb = new StringBuilder();
+         for (int i = 0; i < 1000; i++) {
+             sb.append("sana\n");
+             sb.append("vastine\n");
+         }
+        Scanner l;
+        ByteArrayInputStream bais = new ByteArrayInputStream(sb.toString().getBytes());
+        l = new Scanner(bais);
+        KyselyLogiikka k = new KyselyLogiikka(l);
+        ArrayList<KysSana> a = new ArrayList<KysSana>();
+         for (int i = 0; i < 1000; i++) {
+             a.add(new KysSana("sana", "vastine"));
+         }
+ 
+
+        k.asetaKysymys(a, true, 1);
+        ArrayList<KysSana> ar = k.getA();
         ar.toString().equals(a.toString());
         assertEquals("Sanan tarkastus ei toimi", true, ar.toString().equals(a.toString()));
     }
