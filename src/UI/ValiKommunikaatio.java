@@ -50,7 +50,7 @@ public class ValiKommunikaatio {
     /**
      * Kysytän seuraava sana
      *
-     * @param kysSuunta true = sana -> vastine; false vastine -> sana
+     * @param kysymisSuunta true = sana -> vastine; false vastine -> sana
      *
      * @return palautetaan asetaKysymyksen antama kysyttävä sana.
      */

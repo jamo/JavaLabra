@@ -15,9 +15,9 @@ public class Lukija {
     /**
      * Näytetään viesti ja kysytään String merkkijono.
      *
-     * @param viesti
+     * @param  viesti viestiNäytettävä
      *
-     * @return
+     * @return luettu tieto
      */
     public String kysyString(String viesti) {
         System.out.println(viesti);
@@ -27,9 +27,9 @@ public class Lukija {
     /**
      * Näytetään viesti ja kysytään int luku.
      *
-     * @param viesti
+     * @param viesti Näytettävä viesti
      *
-     * @return
+     * @return Palautetaa luettu luku
      */
     public int kysyInt(String viesti) {
         try {

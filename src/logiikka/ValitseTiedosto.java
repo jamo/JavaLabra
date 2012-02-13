@@ -1,6 +1,7 @@
 package logiikka;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.util.Scanner;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -44,8 +45,12 @@ public class ValitseTiedosto {
      */
     public Scanner lueTiedostoGui() {
         while (true) {
+            
+           
             try {
                 JFileChooser jf = new JFileChooser("~/");
+                jf.setDialogTitle("Valitse avattava tiedosto!");
+                jf.setDragEnabled(true);
                 jf.setVisible(true);
                 jf.setMultiSelectionEnabled(false);
                 jf.showOpenDialog(jf);
@@ -57,6 +62,7 @@ public class ValitseTiedosto {
                 filunLukija = new Scanner(valittu);
                 return filunLukija;
             } catch (Exception ex) {
+                
                 JOptionPane.showMessageDialog(null, "Ei onnistu, tiedoston valinnassa tapahtui virhe");
             }
         }
