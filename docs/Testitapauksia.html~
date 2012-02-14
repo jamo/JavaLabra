@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h1>Testitapauksia</h1>
+<p></p>
+<p>Testejä on toteutettu jokaiselle logiikan luokalle. Millään testerillä ei ole tarkasteltu testien kattavuutta, mutta kattavuus on suuri, sillä metodit eivät kovinkaan usein haaraudu, vaan ne ovat erittäin lyhyitä.</p>
+<p></p>
+<p>Olen kokeillut muutamalla isommallakin tekstitiedostolla kyselyjä, eikä ongelmia ilmennyt (500 riviä). Ohjelman luonteen vuoksi noin suuret syötteet eivät ole odotettavia.</p>
+<p></p>
+<p>Tietenkään GUI-luokkia ei testata JUnit-testeillä tai vastaavilla, koska niissä logiikkaa ei juuri ole. Olen kuitenkin pyrkinyt kokeilemaan kaiken toimivuuden GUI:ssa.</p>
+
+</body>
+</html>
