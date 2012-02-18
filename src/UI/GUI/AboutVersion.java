@@ -36,6 +36,7 @@ param
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("About");
         setLocationByPlatform(true);
 
         jTextArea1.setColumns(20);
@@ -47,7 +48,7 @@ param
         jScrollPane1.setViewportView(jTextArea1);
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
-        jLabel1.setText("Kyselyohjelma v 1.9RC1");
+        jLabel1.setText("Kyselyohjelma v2.0");
 
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

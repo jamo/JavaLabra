@@ -27,17 +27,17 @@ public class SanatTaulukkoon {
                 sana = lukija.nextLine();
             } catch (Exception e) {
                 sana = "sanalla ei ollut arvoa!";
-                System.out.println("'Sana' luokassa Sanat ei saanut arvoa!");
+//                System.out.println("'Sana' luokassa Sanat ei saanut arvoa!");
             }
             try {
                 vastine = lukija.nextLine();
             } catch (Exception e) {
                 vastine = "sanalla ei ollut arvoa!";
-                System.out.println("'Vastine' luokassa Sanat ei saanut arvoa!");
+//                System.out.println("'Vastine' luokassa Sanat ei saanut arvoa!");
             }
             lista.add(new KysSana(sana, vastine));
         }
-        System.out.println("Sanat luettu!");
+//        System.out.println("Sanat luettu!");
 
         lukija.close();
         return lista;

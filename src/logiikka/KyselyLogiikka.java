@@ -31,8 +31,8 @@ public class KyselyLogiikka {
         SanatTaulukkoon st = new SanatTaulukkoon();
         kyselyLista = st.lueSanat(tiedLukija);
         virheidenMukJarjLista = kyselyLista;
-        System.out.println(virheidenMukJarjLista);
-        System.out.println(kyselyLista);
+//        System.out.println(virheidenMukJarjLista);
+//        System.out.println(kyselyLista);
         kohta = kyselyLista.size();
     }
 
@@ -239,9 +239,9 @@ public class KyselyLogiikka {
             virheidenMukJarjLista.add(kyselyLista.get(i));
         }
         
-        System.out.println(virheidenMukJarjLista);;
+//        System.out.println(virheidenMukJarjLista);;
         Collections.sort(virheidenMukJarjLista);
-        System.out.println(virheidenMukJarjLista);
+//        System.out.println(virheidenMukJarjLista);
     }
 
     /**

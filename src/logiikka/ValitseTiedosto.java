@@ -1,7 +1,6 @@
 package logiikka;
 
 import java.io.File;
-import java.io.FileFilter;
 import java.util.Scanner;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;

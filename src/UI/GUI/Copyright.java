@@ -28,6 +28,7 @@ public class Copyright extends javax.swing.JDialog {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Copyright");
         setLocationByPlatform(true);
 
         jTextArea1.setColumns(20);

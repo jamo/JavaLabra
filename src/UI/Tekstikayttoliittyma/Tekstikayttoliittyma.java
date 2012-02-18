@@ -24,35 +24,34 @@ public class Tekstikayttoliittyma {
      * Komentotulkki perus käytöliittymä.
      */
     private void komentotulkki() {
-        Lukija l = new Lukija();
+        Lukija lukija = new Lukija();
         UI.ValiKommunikaatio uk = new UI.ValiKommunikaatio(false);
-        int kohta = 0;
         boolean kysSuunta = true;
         while (true) {
-            l.kerroString("Anna komento: komentoja ovat (q)lopeta,  (n)seuraava, (p)dellinen (r)andom, (l)ooginen, (a)seta suunta, (t)ilanne");
-            String komento = l.kysyString();
+            lukija.kerroString("Anna komento: komentoja ovat (q)lopeta,  (n)seuraava, (p)dellinen (r)andom, (l)ooginen, (a)seta suunta, (t)ilanne");
+            String komento = lukija.kysyString();
 
             if (komento.equals("lopeta") || komento.equals("quit") || komento.equals("q")) {
                 break;
             } else if (komento.equals("seuraava") || komento.equals("next") || komento.equals("n")) {
-                boolean onnistui = uk.tarkastaVastaus(l.kysyString("Anna sanan \"" + uk.kysyNext(kysSuunta) + "\" vastine"));
+                boolean onnistui = uk.tarkastaVastaus(lukija.kysyString("Anna sanan \"" + uk.kysyNext(kysSuunta) + "\" vastine"));
                 if (onnistui) {
-                    l.kerroString("Oikein!");
+                    lukija.kerroString("Oikein!");
                 } else {
-                    l.kerroString("Väärin");
+                    lukija.kerroString("Väärin");
                 }
             } else if (komento.equals("edellinen") || komento.equals("previous") || komento.equals("p")) {
-                uk.tarkastaVastaus(l.kysyString("Anna sanan \"" + uk.kysyEdellinen(kysSuunta) + "\" vastine"));
+                uk.tarkastaVastaus(lukija.kysyString("Anna sanan \"" + uk.kysyEdellinen(kysSuunta) + "\" vastine"));
             } else if (komento.equals("random") || komento.equals("r")) {
-                uk.tarkastaVastaus(l.kysyString("Anna sanan \"" + uk.kysyRandom(kysSuunta) + "\" vastine"));
+                uk.tarkastaVastaus(lukija.kysyString("Anna sanan \"" + uk.kysyRandom(kysSuunta) + "\" vastine"));
             } else if (komento.equals("logiikka") || komento.equals("l")) {
-                uk.tarkastaVastaus(l.kysyString("Anna sanan \"" + uk.kysyLooginen(kysSuunta) + "\" vastine"));
+                uk.tarkastaVastaus(lukija.kysyString("Anna sanan \"" + uk.kysyLooginen(kysSuunta) + "\" vastine"));
             } else if (komento.equals("a") || komento.equals("aseta suunta")) {
-                kysSuunta = asetaSuunta(l);
+                kysSuunta = asetaSuunta(lukija);
             } else if (komento.equals("t") || komento.equals("tilanne")) {
-                l.kerroString("Oikein: " + uk.getOikein() + "\nVäärin: " + uk.getVaarin() + "\nYhteensä: " + uk.getYhteensa());
+                lukija.kerroString("Oikein: " + uk.getOikein() + "\nVäärin: " + uk.getVaarin() + "\nYhteensä: " + uk.getYhteensa());
             } else {
-                System.out.println("Komentoa ei tunnistettu!");
+                lukija.kerroString("Komentoa ei tunnistettu!");
             }
         }
     }
